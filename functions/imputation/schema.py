@@ -1,0 +1,52 @@
+"""Column groups shared by rental and sales imputation."""
+
+PROPERTY_COLS = [
+    "Condo_Age_2026",
+    "tenure_remaining_years",
+    "tenure_freehold_like",
+    "tenure_medium_lease_60_80",
+    "tenure_more_than_80",
+    "tenure_short_lease_lt60",
+    "tenure_unknown",
+    "Large_Dev_200plus",
+    "project_size_small",
+    "project_size_medium",
+    "project_size_large",
+    "Planning Area",
+    "Neighbourhood",
+]
+MACRO_COLS = [
+    "cpi_all_items_infl_yoy_pct",
+    "unemployment_rate_sa_pct",
+    "sora_compounded_3m_pct",
+    "sg_govt_bond_yield_10y_pct",
+    "sgd_per_usd_logret_12m_pct",
+    "ura_private_rental_index_yoy_pct",
+    "ura_private_price_index_avg_3seg_yoy_pct",
+    "hdb_resale_price_index_yoy_pct",
+    "gva_yoy_growth_pct",
+    "rental_index_nonlanded_yoy_log_growth_lag1q",
+    "rental_index_nonlanded_in_ccr_yoy_log_growth_lag1q",
+    "rental_index_nonlanded_in_ocr_yoy_log_growth_lag1q",
+    "rental_index_nonlanded_in_rcr_yoy_log_growth_lag1q",
+    "ppi_nonlanded_yoy_log_growth_lag1q",
+    "ppi_nonlanded_in_ccr_yoy_log_growth_lag1q",
+    "ppi_nonlanded_in_ocr_yoy_log_growth_lag1q",
+    "ppi_nonlanded_in_rcr_yoy_log_growth_lag1q",
+    "log1p_vacant_nonlanded_units_lag1q",
+    "vacancy_rate_nonlanded_units_lag1q",
+    "log1p_nonlanded_private_units_in_the_pipeline_lag1q",
+    "nonlanded_private_units_in_the_pipeline_under_construction_share_lag1q",
+    "log1p_non_landed_units_launched_in_private_res_projects_with_prereq_for_sale_lag1q",
+    "non_landed_units_in_private_res_projects_with_prereq_not_launched_share_lag1q",
+    "log1p_unsold_completed_nonlanded_private_units_lag1q",
+    "log1p_unsold_non_landed_units_in_launched_private_res_projects_lag1q",
+    "assessed_non_landed_private_residential_owned_by_companies_share_lag1q",
+    "assessed_non_landed_private_residential_owned_by_pr_foreigners_share_lag1q",
+    "uncompleted_non_landed_private_residential_purchased_by_companies_share_lag1q",
+    "uncompleted_non_landed_private_residential_purchased_by_foreigners_share_lag1q",
+    "uncompleted_non_landed_private_residential_purchased_by_spr_share_lag1q",
+]
+AMENITY_TYPES = ["Bus Stops", "Supermarkets", "Parks", "Clinics", "Bank", "ATMs"]
+ORDINALS = ["1st", "2nd", "3rd", "4th", "5th"]
+LOCATION_COLS = ["latitude", "longitude"]

@@ -1,0 +1,50 @@
+# Local datasets, generated results and historical audit material
+data/
+outputs/
+validation/
+SOURCE_INVENTORY.csv
+source_manifest.json
+CLEANUP_LOG.md
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.ipynb
+
+# Environments, credentials and local editor settings
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+.conda/
+.vscode/
+.idea/
+
+# Data exports and trained model artifacts
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.log
+*.zip
+
+# Operating-system metadata
+Thumbs.db
+desktop.ini
+.DS_Store
