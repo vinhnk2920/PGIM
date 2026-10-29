@@ -1,10 +1,10 @@
 # Data guide
 
-The repository includes 26 complete small reference files (each below 100 MiB), plus five-row previews of the 13 larger CSVs. Full transaction, imputation and model-input files remain on OneDrive. The previews are for understanding the schema and example values only; a fresh clone cannot run the complete pipeline from the previews.
+The repository includes 26 complete small reference files (each below 100 MiB), plus five-row previews of the 13 larger CSVs. Full transaction, imputation and model-input datasets will be uploaded separately. The previews are for understanding the schema and example values only; a fresh clone cannot run the complete pipeline from the previews.
 
 ## Included complete reference files
 
-Files in the following table are copied without changing their contents. Their checksums were verified against the local OneDrive copies.
+Files in the following table are copied without changing their contents. Their checksums were verified against the original reference files.
 
 | Path relative to `data/` | Size (MiB) |
 |---|---:|
@@ -41,30 +41,13 @@ The small `imputation/rental_size_bucket_ranges_full_districts.csv` is a referen
 
 See [snapshots/README.md](snapshots/README.md) for all 13 preview files and full-file sizes. Each preview has five data rows and the original header. The corresponding full files are deliberately excluded from Git.
 
-## Full-data location
+## Full-data availability
 
-The complete files remain in the existing OneDrive folder on the project owner's computer:
+The full datasets will be uploaded separately. Download links and access instructions will be added here once they are available.
 
-```text
-~/OneDrive - National University of Singapore/NUS/project/2026_PGIM/code/PGIM_prediction_code/data/
-```
+For now, this repository contains the complete small reference files and five-row previews of the larger datasets. The previews illustrate the schema and example values; they cannot replace the complete files when running the pipeline.
 
-This is a local synchronized folder, not a public download URL. Use the separately shared project data when working on another computer. Preserve the relative paths shown in the preview manifest.
-
-Two supported ways to run from the GitHub checkout are:
-
-1. Copy the required complete files from OneDrive into their normal locations under this checkout's `data/`. The included small references are already in place. Then run the commands in the [main README](../README.md#run-the-pipeline).
-2. Leave all data on OneDrive and add `--source-root "/absolute/path/to/PGIM_prediction_code/data"` to each stage. To reuse existing intermediate results, also supply `--output-root "/absolute/path/to/PGIM_prediction_code/outputs"`. Without that output override, new results are written to this checkout's `outputs/`.
-
-The `--source-root` option selects one complete data root; it does not merge the GitHub references with a second folder. The original OneDrive data root already contains both the small references and the large files.
-
-To use OneDrive's existing final forecasting inputs from `data/model_input/`, run:
-
-```bash
-python 04_forecast.py --mode static --reuse-existing --source-root "/absolute/path/to/PGIM_prediction_code/data"
-```
-
-If both source and output roots point to the original OneDrive installation, newly generated `outputs/03_features/` inputs take priority over the older `data/model_input/` snapshots. The GitHub preview of a model-input snapshot therefore documents that snapshot, not a promise that it is the latest generated output.
+Once the full datasets are available, place them under `data/` using the relative paths listed in [the preview manifest](snapshots/manifest.json), then follow the commands in the [main README](../README.md#run-the-pipeline).
 
 ## Git tracking
 

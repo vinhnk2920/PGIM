@@ -1,6 +1,6 @@
 # Large-data previews
 
-Each CSV in this directory contains the original header and the first five data records from one full dataset held on OneDrive. All columns, blank fields and parsed text values are preserved; no numeric conversion or random sampling was applied. These rows show the file structure and example values only. They are not representative samples, training datasets or complete forecasting inputs.
+Each CSV in this directory contains the original header and the first five data records from one larger dataset whose full version will be uploaded separately. All columns, blank fields and parsed text values are preserved; no numeric conversion or random sampling was applied. These rows show the file structure and example values only. They are not representative samples, training datasets or complete forecasting inputs.
 
 The subdirectories mirror the original paths under `data/`. For example, `data/snapshots/model_input/<filename>.csv` previews the full file expected at `data/model_input/<filename>.csv`. The pipeline never reads `data/snapshots/` by default. Do not copy these previews into the full-data input paths.
 
@@ -20,4 +20,4 @@ The subdirectories mirror the original paths under `data/`. For example, `data/s
 | [model_input/URA_renting_imputed_vae_trend_policies_nearby_prices_full_districts.csv](model_input/URA_renting_imputed_vae_trend_policies_nearby_prices_full_districts.csv) | 5 | 221 | 3,401.67 |
 | [model_input/URA_sales_imputed_vae_trend_policies_nearby_prices_full_districts.csv](model_input/URA_sales_imputed_vae_trend_policies_nearby_prices_full_districts.csv) | 5 | 225 | 3,530.09 |
 
-`manifest.json` records source sizes, sample rules and preview checksums. The complete files remain in the existing OneDrive project data folder; see [the data guide](../README.md#full-data-location).
+`manifest.json` records source sizes, sample rules and preview checksums. The full datasets will be uploaded separately. Download links and access instructions will be added to [the data guide](../README.md#full-data-availability) when they are available.

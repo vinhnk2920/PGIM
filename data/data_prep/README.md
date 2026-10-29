@@ -1,6 +1,6 @@
 # Preprocessing inputs
 
-The directory groups inputs by subject. GitHub contains the small reference tables listed in [the data guide](../README.md); the larger transaction and property snapshots remain on OneDrive, with previews under [data/snapshots/data_prep/](../snapshots/data_prep/).
+The directory groups inputs by subject. GitHub contains the small reference tables listed in [the data guide](../README.md); the complete large transaction and property datasets will be uploaded separately, with previews available under [data/snapshots/data_prep/](../snapshots/data_prep/).
 
 ```text
 data_prep/
@@ -33,7 +33,7 @@ Enrichment precedes imputation. Default step 1 uses enriched snapshots; `--rebui
 
 ## Reference groups
 
-- `property/`: property/facilities attributes. The included `property_details_facilities.csv` was recovered from an original checkpoint; its recency relative to the research run is not independently established. The larger 99.co-enriched reference stays on OneDrive.
+- `property/`: property/facilities attributes. The included `property_details_facilities.csv` was recovered from an original checkpoint; its recency relative to the research run is not independently established. The complete larger 99.co-enriched reference will be uploaded separately.
 - `location/`: shared coordinates, walking distances, school and amenity references, plus the supplementary sales MRT table.
 - `macro/monthly/`: shared monthly macro series.
 - `macro/quarterly/`: quarterly URA tables, including ownership counts. The ownership table's `-` markers for 2006Q2 and 2006Q3 remain missing; they are not filled in the source.

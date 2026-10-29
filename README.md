@@ -2,7 +2,7 @@
 
 Python workflow for full-district Singapore private residential rental and sales forecasting. The pipeline prepares transactions, imputes missing monthly prices with a VAE, builds explanatory features, and fits LightGBM forecasts at 1, 12 and 24 months.
 
-This repository contains Python source, tests, runtime configuration, 26 complete small reference files, and five-row previews of 13 larger datasets. The full large files remain on OneDrive. Generated outputs, trained models and local validation reports are not included. See [the data guide](data/README.md) for the included files and full-data setup.
+This repository contains Python source, tests, runtime configuration, 26 complete small reference files, and five-row previews of 13 larger datasets. The full datasets will be uploaded separately; download links and access instructions will be added to the data guide. Generated outputs, trained models and local validation reports are not included. See [the data guide](data/README.md) for the included files and full-data setup.
 
 ## Environment setup
 
@@ -67,7 +67,7 @@ The numbered files are command-line entry points. Their implementations live in 
 
 ## Prepare the local data
 
-The small reference inputs are included under `data/`. Obtain the complete large files from the existing OneDrive project and restore them to their normal paths before running the relevant stages. Each large file has a five-row preview under `data/snapshots/`; these previews are for inspection only and are not pipeline inputs. See [the full-data setup](data/README.md#full-data-location).
+The small reference inputs are included under `data/`. The complete large datasets will be uploaded separately. Download links and access instructions will be added when they are available; the relevant pipeline stages require those complete files. Each large file has a five-row preview under `data/snapshots/`; these previews are for inspection only and are not pipeline inputs. See [the full-data setup](data/README.md#full-data-availability).
 
 The runtime data layout is:
 
@@ -108,12 +108,6 @@ The quarterly reference filenames and raw-enrichment reference paths are defined
 - `data_prep/trend_policy/condo_rent_external_features_consolidated.csv` and `condo_sales_external_features_consolidated.csv`.
 
 To use a data directory outside the repository, add `--source-root "/absolute/path/to/data"` to each command. It must point to the directory containing `data_prep/`, `imputation/` and `model_input/`, rather than to `data_prep/` itself. Outputs still go to the repository's `outputs/` unless `--output-root` is also supplied.
-
-For example, a clone can use the full OneDrive data and intermediate results from an existing local installation:
-
-```bash
-python 04_forecast.py --mode static --source-root "/absolute/path/to/PGIM_prediction_code/data" --output-root "/absolute/path/to/PGIM_prediction_code/outputs"
-```
 
 Run the lightweight inspection before training:
 
