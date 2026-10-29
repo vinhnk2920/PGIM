@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-10-29T13:45:32.797899+08:00",
+  "purpose": "Schema and value previews only; not pipeline inputs or representative research samples.",
+  "snapshots": [
+    {
+      "source_relative_path": "data/data_prep/property/URA_enriched_with_99co_v2.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/property/URA_enriched_with_99co_v2.csv",
+      "source_bytes": 1182325608,
+      "source_mib": 1127.55,
+      "source_modified_at": "2026-03-19T15:47:26+08:00",
+      "columns": 286,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "a501d0fd8ff98b37b91b9851b55e1905133702ef57cd43d5e50fa9627b52caf9"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/rental/cleaned/URA_merged_full_v3_new_macro_removed_outliers.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/rental/cleaned/URA_merged_full_v3_new_macro_removed_outliers.csv",
+      "source_bytes": 3111137305,
+      "source_mib": 2967.01,
+      "source_modified_at": "2026-05-04T17:37:13+08:00",
+      "columns": 393,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "4f1e2960dd4028fb8fb800f815d9742149c4b194d742ecb1f4aa44d34f464c61"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/rental/enriched/rental_merged_tenure_1999-2026_enriched_macro.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/rental/enriched/rental_merged_tenure_1999-2026_enriched_macro.csv",
+      "source_bytes": 413271061,
+      "source_mib": 394.13,
+      "source_modified_at": "2026-03-09T17:33:40+08:00",
+      "columns": 29,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "c6c3d5400d0dc929837e06c393f6ec1e0a6d01976bfe8529848f5ca9c5febc89"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/rental/enriched/URA_merged_full_v1.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/rental/enriched/URA_merged_full_v1.csv",
+      "source_bytes": 2918376427,
+      "source_mib": 2783.18,
+      "source_modified_at": "2026-04-27T12:50:30+08:00",
+      "columns": 367,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "530be1d9d103861340c25cefaa7363b99dda334f1a25143c7524d89360a7878a"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/rental/enriched/URA_merged_full_v3_new.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/rental/enriched/URA_merged_full_v3_new.csv",
+      "source_bytes": 2919567867,
+      "source_mib": 2784.32,
+      "source_modified_at": "2026-04-29T11:07:05+08:00",
+      "columns": 367,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "530be1d9d103861340c25cefaa7363b99dda334f1a25143c7524d89360a7878a"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/rental/source/rental_merged_tenure_1999-2026.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/rental/source/rental_merged_tenure_1999-2026.csv",
+      "source_bytes": 250332930,
+      "source_mib": 238.74,
+      "source_modified_at": "2026-03-09T17:35:18+08:00",
+      "columns": 17,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "a8d4a43929193685a9cf9fe7a138812ca4d4f697998d2bf8abd94ee9da987ed8"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/sales/cleaned/URA_sale_removed_outliers_2.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/sales/cleaned/URA_sale_removed_outliers_2.csv",
+      "source_bytes": 1315991215,
+      "source_mib": 1255.03,
+      "source_modified_at": "2026-05-18T08:51:40+08:00",
+      "columns": 424,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "4535fbc15ee2aa3c8942197c6c725742e9301c3a493e1f557bcaf0d0627ab6ed"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/sales/enriched/URA_sale_data.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/sales/enriched/URA_sale_data.csv",
+      "source_bytes": 1259737630,
+      "source_mib": 1201.38,
+      "source_modified_at": "2026-05-18T01:52:44+08:00",
+      "columns": 413,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "2ccd52ba159a25bff4ff09ade6586e77a7ed07a9fa21a5d5b81f78dc6ff4058f"
+    },
+    {
+      "source_relative_path": "data/data_prep/transactions/sales/source/raw_realis_transaction.csv",
+      "snapshot_relative_path": "data/snapshots/data_prep/transactions/sales/source/raw_realis_transaction.csv",
+      "source_bytes": 135719075,
+      "source_mib": 129.43,
+      "source_modified_at": "2026-05-04T15:42:26+08:00",
+      "columns": 22,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "c7c3dd81298554ac3d08eac60314e5b74f744d27f00852917d048b07ed6b1c80"
+    },
+    {
+      "source_relative_path": "data/imputation/URA_renting_imputed_vae_a4_mcra_full_districts.csv",
+      "snapshot_relative_path": "data/snapshots/imputation/URA_renting_imputed_vae_a4_mcra_full_districts.csv",
+      "source_bytes": 2806928158,
+      "source_mib": 2676.9,
+      "source_modified_at": "2026-08-19T14:40:42.931282+08:00",
+      "columns": 174,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "ac092ad8a2684603dd22849fcc15fb41804c02673ea7f2d1b23f5938583815e8"
+    },
+    {
+      "source_relative_path": "data/imputation/URA_sales_imputed_vae_a4_mcra_full_districts.csv",
+      "snapshot_relative_path": "data/snapshots/imputation/URA_sales_imputed_vae_a4_mcra_full_districts.csv",
+      "source_bytes": 2921496987,
+      "source_mib": 2786.16,
+      "source_modified_at": "2026-08-19T18:31:11.840933+08:00",
+      "columns": 175,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "c5f2cf0d2cdc55a7ef28937c38790eb9af2dab31960515adb4f32d26aa3796f6"
+    },
+    {
+      "source_relative_path": "data/model_input/URA_renting_imputed_vae_trend_policies_nearby_prices_full_districts.csv",
+      "snapshot_relative_path": "data/snapshots/model_input/URA_renting_imputed_vae_trend_policies_nearby_prices_full_districts.csv",
+      "source_bytes": 3566904794,
+      "source_mib": 3401.67,
+      "source_modified_at": "2026-08-20T00:54:29.434405+08:00",
+      "columns": 221,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "9370275ece3fcdbdb6ee129e3b8ea2e17ad683e17c306b577762fb26f4f73897"
+    },
+    {
+      "source_relative_path": "data/model_input/URA_sales_imputed_vae_trend_policies_nearby_prices_full_districts.csv",
+      "snapshot_relative_path": "data/snapshots/model_input/URA_sales_imputed_vae_trend_policies_nearby_prices_full_districts.csv",
+      "source_bytes": 3701570778,
+      "source_mib": 3530.09,
+      "source_modified_at": "2026-08-20T01:02:29.593224+08:00",
+      "columns": 225,
+      "sample_rows": 5,
+      "sample_method": "First five logical CSV records after the header, in original order",
+      "is_complete_dataset": false,
+      "snapshot_sha256": "db584b2654fe4f21017a18a10845bdb9b33fa37d2f7f5ec091f0c20f2f1b2814"
+    }
+  ]
+}

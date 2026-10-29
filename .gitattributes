@@ -1,0 +1,4 @@
+# Preserve CSV/Excel input bytes across Windows and Unix checkouts.
+/data/**/*.csv -text
+/data/**/*.xlsx -text
+/data/**/*.xls -text

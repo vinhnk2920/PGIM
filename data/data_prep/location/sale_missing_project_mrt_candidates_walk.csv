@@ -1,0 +1,931 @@
+district,project_name,condo_lat,condo_lng,candidate_rank,candidate_place_id,candidate_name,candidate_lat,candidate_lng,walk_distance_m,walk_duration,distance_method,is_selected_best,candidate_error
+FULL,2B COMPLEX,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,32 GILSTEAD,1.317637972100201,103.839239630907,1,ChIJTxTEcecZ2jERVySfJurj8Ok,Novena,1.3204399999999998,103.84383,1051,897s,routes,1,
+FULL,32 GILSTEAD,1.317637972100201,103.839239630907,2,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2336,1973s,routes,0,
+FULL,32 GILSTEAD,1.317637972100201,103.839239630907,3,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,2430,2091s,routes,0,
+FULL,3@SANDILANDS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,8@BT,1.351481889382939,103.7383860153375,1,ChIJy37FHD8Q2jERQrs731bZT5Y,Bukit Batok,1.3490609999999998,103.7495977,1829,1577s,routes,1,
+FULL,8@BT,1.351481889382939,103.7383860153375,2,ChIJmYDhHjYQ2jERn_eQZlaFlkw,Bukit Gombak,1.3587805,103.7519975,2152,1823s,routes,0,
+FULL,8@BT,1.351481889382939,103.7383860153375,3,ChIJUeGvkh4Q2jER21Tz2-_e-_I,Chinese Garden,1.3424249,103.73259240000002,2691,2287s,routes,0,
+FULL,ADAM GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ADIS VILLAS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ADVANCE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AIRVIEW TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ALDEA BLANCA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMBER APARTMENTS,1.300920109208773,103.9012447332431,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,892,749s,routes,1,
+FULL,AMBER APARTMENTS,1.300920109208773,103.9012447332431,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,2037,1711s,routes,0,
+FULL,AMBER APARTMENTS,1.300920109208773,103.9012447332431,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2242,1893s,routes,0,
+FULL,AMBER HOUSE,1.301605677058914,103.9006068675867,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,954,806s,routes,1,
+FULL,AMBER HOUSE,1.301605677058914,103.9006068675867,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,2073,1728s,routes,0,
+FULL,AMBER HOUSE,1.301605677058914,103.9006068675867,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2304,1949s,routes,0,
+FULL,AMBER LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMBER PARK (DEMOLISHED),,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMBER TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMBERGLADES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMBERVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AMO RESIDENCE,1.368897300447882,103.8328747262197,1,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,950,800s,routes,1,
+FULL,AMO RESIDENCE,1.368897300447882,103.8328747262197,2,ChIJk7o5bCgX2jERLIGuaaly5e8,Bright Hill,1.3627329,103.8322433,1797,1498s,routes,0,
+FULL,AMO RESIDENCE,1.368897300447882,103.8328747262197,3,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,2153,1812s,routes,0,
+FULL,AMYTON COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ANCHOR GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ANDERSON HOUSE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ANGEL COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ANGULLIA HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ANGULLIA MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AO JIANG APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,APARTMENT 8,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARANG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARDMORE POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARDMORE THREE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARDMORE VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARDOR RESIDENCE,1.306464119252234,103.8994417413862,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1195,1015s,routes,1,
+FULL,ARDOR RESIDENCE,1.306464119252234,103.8994417413862,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1409,1179s,routes,0,
+FULL,ARDOR RESIDENCE,1.306464119252234,103.8994417413862,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1614,1351s,routes,0,
+FULL,ARINA EAST RESIDENCES,1.299455326290393,103.8843432247802,1,ChIJ1--Qyk4Y2jERqHYnktErHrM,Stadium,1.30284,103.87535,2091,1707s,routes,1,
+FULL,ARINA EAST RESIDENCES,1.299455326290393,103.8843432247802,2,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,2905,2462s,routes,0,
+FULL,ARINA EAST RESIDENCES,1.299455326290393,103.8843432247802,3,ChIJ580nZDQY2jERNmMG5GQHQMI,Kallang,1.3114865,103.8713507,2925,2464s,routes,0,
+FULL,ARIVA ON SHAN SERVICED RESIDENCE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AROOZOO CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARTHUR COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ARTISAN 8,1.353718102303169,103.8361172881759,1,ChIJaQLjpDoX2jERgAsgFIOg73U,Upper Thomson,1.3539736999999998,103.8338174,309,255s,routes,1,
+FULL,ARTISAN 8,1.353718102303169,103.8361172881759,2,ChIJRf3Ftj4X2jERvjPG4vhLNeY,Marymount,1.3490141999999998,103.83909469999999,803,662s,routes,0,
+FULL,ARTISAN 8,1.353718102303169,103.8361172881759,3,ChIJk7o5bCgX2jERLIGuaaly5e8,Bright Hill,1.3627329,103.8322433,1490,1237s,routes,0,
+FULL,ASIA GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ASIMONT @ BARKER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AURA PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AUREA,1.30307225912463,103.8657805281881,1,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,988,827s,routes,1,
+FULL,AUREA,1.30307225912463,103.8657805281881,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,1289,1118s,routes,0,
+FULL,AUREA,1.30307225912463,103.8657805281881,3,ChIJg-1OCaYZ2jERrP1VjFszkFQ,Esplanade,1.2940432,103.85540929999999,1684,1367s,routes,0,
+FULL,AUSTRAL VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AUTUMN GLORY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,AUTUMN TEN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BAGNALL COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BAGNALL HAUS,1.320275523459016,103.9548330823778,1,ChIJgRre4DI92jERBpnxSiBKwwo,Tanah Merah,1.3272443999999999,103.9464897,1468,1214s,routes,1,
+FULL,BAGNALL HAUS,1.320275523459016,103.9548330823778,2,ChIJKa5Rw8Yi2jER3anuZe7Elqg,Bayshore,1.3128499999999999,103.94126,2228,1857s,routes,0,
+FULL,BAGNALL HAUS,1.320275523459016,103.9548330823778,3,ChIJEx8s5dc82jER1_xARHMwmww,Expo,1.3344367,103.9615998,2787,2294s,routes,0,
+FULL,BALESTIER COMPLEX,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALESTIER COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALESTIER MANSION,1.325285587011481,103.8528350098421,1,ChIJTxTEcecZ2jERVySfJurj8Ok,Novena,1.3204399999999998,103.84383,1569,1335s,routes,1,
+FULL,BALESTIER MANSION,1.325285587011481,103.8528350098421,2,ChIJy7SWftEZ2jERRM4LKZ_0j8M,Boon Keng,1.3200375,103.861623,1703,1460s,routes,0,
+FULL,BALESTIER MANSION,1.325285587011481,103.8528350098421,3,ChIJ48Ai4mYX2jER5M71MMdN5NY,Toa Payoh,1.3323296999999998,103.84742519999999,1840,1562s,routes,0,
+FULL,BALESTIER TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALMEG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALMORAL COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALMORAL GREEN,1.316202620712296,103.8313196430358,1,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,2389,1998s,routes,1,
+FULL,BALMORAL GREEN,1.316202620712296,103.8313196430358,2,ChIJTxTEcecZ2jERVySfJurj8Ok,Novena,1.3204399999999998,103.84383,2538,2183s,routes,0,
+FULL,BALMORAL GREEN,1.316202620712296,103.8313196430358,3,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,3124,2636s,routes,0,
+FULL,BALMORAL GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALMORAL HAVEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BALMORAL PARK,1.315501521957077,103.8291659270292,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1977,1666s,routes,1,
+FULL,BALMORAL PARK,1.315501521957077,103.8291659270292,2,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,2804,2321s,routes,0,
+FULL,BALMORAL PARK,1.315501521957077,103.8291659270292,3,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2842,2381s,routes,0,
+FULL,BALMORAL VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BARTLEY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BARTLEY VUE,1.340361858967607,103.8838464441384,1,ChIJ8TvwnY0X2jER3eTNw9iVmKE,Tai Seng,1.3358755999999998,103.8877164,737,599s,routes,1,
+FULL,BARTLEY VUE,1.340361858967607,103.8838464441384,2,ChIJKW7xoooX2jERWCwU-Zxw1Vc,Macpherson,1.3267117,103.88998509999999,1914,1591s,routes,0,
+FULL,BARTLEY VUE,1.340361858967607,103.8838464441384,3,ChIJP6_oVKEX2jER8tuSBXrr2es,Serangoon,1.3499615000000003,103.8734128,2034,1769s,routes,0,
+FULL,BEE HWA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BENG TONG MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BEVERLY MAI,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BLOOMSBURY RESIDENCES,1.294442359840532,103.7951287463192,1,ChIJi9J7UkUa2jEREUidaQaWpMU,One-North,1.2998113,103.78759470000001,1207,1022s,routes,1,
+FULL,BLOOMSBURY RESIDENCES,1.294442359840532,103.7951287463192,2,ChIJhY0kWUca2jERcQr3RFss0Fg,Commonwealth,1.3023957,103.79831569999999,1676,1364s,routes,0,
+FULL,BLOOMSBURY RESIDENCES,1.294442359840532,103.7951287463192,3,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,2009,1667s,routes,0,
+FULL,BLOSSOM MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BLOSSOMS BY THE PARK,1.304394078164087,103.7892982430554,1,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,430,388s,routes,1,
+FULL,BLOSSOMS BY THE PARK,1.304394078164087,103.7892982430554,2,ChIJi9J7UkUa2jEREUidaQaWpMU,One-North,1.2998113,103.78759470000001,707,597s,routes,0,
+FULL,BLOSSOMS BY THE PARK,1.304394078164087,103.7892982430554,3,ChIJibY7cGsa2jER6eVsmwG3vQo,Holland Village,1.3111753,103.79612890000001,1230,1049s,routes,0,
+FULL,BO BO TAN GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOAT QUAY CONSERVATION AREA,1.288142977507006,103.8489339962237,1,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,587,481s,routes,1,
+FULL,BOAT QUAY CONSERVATION AREA,1.288142977507006,103.8489339962237,2,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,666,546s,routes,0,
+FULL,BOAT QUAY CONSERVATION AREA,1.288142977507006,103.8489339962237,3,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,885,761s,routes,0,
+FULL,BOON SING BUILDING,1.297021509609374,103.8553861644647,1,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,490,407s,routes,1,
+FULL,BOON SING BUILDING,1.297021509609374,103.8553861644647,2,ChIJg-1OCaYZ2jERrP1VjFszkFQ,Esplanade,1.2940432,103.85540929999999,553,470s,routes,0,
+FULL,BOON SING BUILDING,1.297021509609374,103.8553861644647,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,654,561s,routes,0,
+FULL,BOON TECK HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOON TECK LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOON TECK VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOON THONG BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOUGAINVILLA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BOUGAINVILLE MAISONETTE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BRADDELL REGALIA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BRIGHT BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BRIGHTVIEW APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BROOKVALE PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BUCKLEY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,BUKIT PASOH EXTNSN CONSTN AREA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAI GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAI YUAN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAIRNHILL APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAIRNHILL COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAIRNHILL GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAIRNHILL MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CALISAY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CALROSE GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAMAY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CANAAN,1.323994435133893,103.8635467537726,1,ChIJ-X9Rv8UZ2jERgfIAvUtw1vw,Farrer Park,1.31236,103.85418,1868,1535s,routes,1,
+FULL,CANAAN,1.323994435133893,103.8635467537726,2,ChIJ580nZDQY2jERNmMG5GQHQMI,Kallang,1.3114865,103.8713507,2334,1958s,routes,0,
+FULL,CANAAN,1.323994435133893,103.8635467537726,3,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,2347,1997s,routes,0,
+FULL,CANBERRA CRESCENT RESIDENCES,1.449921230269529,103.8293971626456,1,ChIJTX8DkIYU2jERMSWf5EIMcU4,Canberra,1.4430387999999998,103.8296632,1007,854s,routes,1,
+FULL,CANBERRA CRESCENT RESIDENCES,1.449921230269529,103.8293971626456,2,ChIJWUPdyWIT2jERxPOWpY4QJ5A,Sembawang,1.4490900000000002,103.820049,1566,1365s,routes,0,
+FULL,CANBERRA CRESCENT RESIDENCES,1.449921230269529,103.8293971626456,3,ChIJc6Z8jG8U2jERv8M81RFvr7Q,Yishun,1.4294430999999999,103.835005,2600,2186s,routes,0,
+FULL,CANNINGHILL PIERS,1.291553206776288,103.8446718340535,1,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,982,815s,routes,1,
+FULL,CANNINGHILL PIERS,1.291553206776288,103.8446718340535,2,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1187,979s,routes,0,
+FULL,CANNINGHILL PIERS,1.291553206776288,103.8446718340535,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1244,1045s,routes,0,
+FULL,CARDIFF COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CARLISLE LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CARLTON TERRACE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASA CONTENDERE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASA MEYFORT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASA NASSAU,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASA SOPHIA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASABELLA CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASHEW HEIGHTS CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CASTLE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CAVENAGH MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CENTURY VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHAMBERY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHANCERY GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHANCERY VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHAPEL MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHAR YONG GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHARLES VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHARLTON COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHARLTON LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHATEAU DE HOLLANDE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHATEAU ELIZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHEN YUAN BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHENG HOE HOUSE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHESTNUT VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHEZ BRIGHT APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHINATOWN PLAZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHONG KIM APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHOON KIM HOUSE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHUAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHUAN HOE MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHUAN PARK,1.356707841404745,103.8677141580091,1,ChIJP6_oVKEX2jER8tuSBXrr2es,Serangoon,1.3499615000000003,103.8734128,1671,1453s,routes,1,
+FULL,CHUAN PARK,1.356707841404745,103.8677141580091,2,ChIJZ57syp0X2jERE4a9G0SQHl0,Woodleigh,1.3387654999999998,103.87049599999999,2740,2365s,routes,0,
+FULL,CHUAN PARK,1.356707841404745,103.8677141580091,3,ChIJJ8F39rMX2jERDK76MHa6RwE,Kovan,1.359746,103.88427759999999,2999,2558s,routes,0,
+FULL,CHUAN PARK (DEMOLISHED),,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CHUAN SENG BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CITIPORT CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CITY MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CITY TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CLAYDENCE,1.313312136814343,103.9061712178845,1,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1090,930s,routes,1,
+FULL,CLAYDENCE,1.313312136814343,103.9061712178845,2,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1422,1203s,routes,0,
+FULL,CLAYDENCE,1.313312136814343,103.9061712178845,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2045,1669s,routes,0,
+FULL,CLEMENCEAU COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CLEMENTI PARK SHOPPING CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,COMFORT MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CONCORDE RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CREE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CRYSTAL TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CULFORD GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CURZON LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CUSCADEN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,CUSCADEN TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'BANYAN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'CAMBRIDGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'EVELYN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'FOCUS APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'GALLERY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D'SAVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,D-MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DAIRY FARM ESTATE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DAISY APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DARBY PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DATOH COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DE ANGELO,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DENG FU COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DERBY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DERBYSHIRE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DERBYSHIRE MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DEVONSHIRE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DEVONSHIRE LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DIAMOND TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DIMENSIONS BUILDING,1.27708979191957,103.8365803341449,1,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1147,972s,routes,1,
+FULL,DIMENSIONS BUILDING,1.27708979191957,103.8365803341449,2,ChIJj7KfORMZ2jERJAUe-Q0aW5I,Tanjong Pagar,1.2765199999999999,103.84586,1329,1086s,routes,0,
+FULL,DIMENSIONS BUILDING,1.27708979191957,103.8365803341449,3,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,2202,1821s,routes,0,
+FULL,DORSET COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DRAGON MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DRAGON PEARL APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DUBLIN ROAD FLATS,1.298358704125238,103.8402678839538,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1027,863s,routes,1,
+FULL,DUBLIN ROAD FLATS,1.298358704125238,103.8402678839538,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1285,1062s,routes,0,
+FULL,DUBLIN ROAD FLATS,1.298358704125238,103.8402678839538,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,2114,1757s,routes,0,
+FULL,DUCHESS COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DUCHESS PARK,1.321792375543744,103.8058914768143,1,ChIJfYAWKhAa2jERor0NyvIz_pU,Farrer Road,1.3175983000000002,103.8074697,1077,882s,routes,1,
+FULL,DUCHESS PARK,1.321792375543744,103.8058914768143,2,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,1350,1129s,routes,0,
+FULL,DUCHESS PARK,1.321792375543744,103.8058914768143,3,ChIJp0ROMp8Q2jERKYlWsK7ARrw,Sixth Avenue,1.3315664999999999,103.7969763,2035,1699s,routes,0,
+FULL,DUNEARN GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DUNMAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,DUSUN GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EAST SHORE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EASTERN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EASTERN WAY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EDEN SPRING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EDENVALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EL CENTRO,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ELEGANCE VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ELLING COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ELMIRA HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ELTA,1.307556398357548,103.7676132290254,1,ChIJwSNoSo4a2jERJV-XA_Ifq-Q,Clementi,1.3154228,103.7650786,1294,1115s,routes,1,
+FULL,ELTA,1.307556398357548,103.7676132290254,2,ChIJI4ftDmEa2jERtj1VWjNTNRg,Dover,1.3113849,103.7786069,2920,2434s,routes,0,
+FULL,ELTA,1.307556398357548,103.7676132290254,3,ChIJi9J7UkUa2jEREUidaQaWpMU,One-North,1.2998113,103.78759470000001,3235,2740s,routes,0,
+FULL,EMERALD LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EMERALD MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EMERALD OF KATONG,1.304746729809507,103.8980400997034,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1346,1151s,routes,1,
+FULL,EMERALD OF KATONG,1.304746729809507,103.8980400997034,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1389,1133s,routes,0,
+FULL,EMERALD OF KATONG,1.304746729809507,103.8980400997034,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1795,1515s,routes,0,
+FULL,EN FU MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ENCHANTÉ,1.315852682647176,103.8403376008593,1,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2162,1841s,routes,1,
+FULL,ENCHANTÉ,1.315852682647176,103.8403376008593,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,2461,2139s,routes,0,
+FULL,ENCHANTÉ,1.315852682647176,103.8403376008593,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2778,2340s,routes,0,
+FULL,ENG CHEONG TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ENG LOK MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ENG TAI MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ESSEN APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EU HOCK APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EUNOS GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EUNOS MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EUNOSVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EURO-ASIA APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,EVIAN CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FABER RESIDENCE,1.322664255455346,103.7538723074732,1,ChIJwSNoSo4a2jERJV-XA_Ifq-Q,Clementi,1.3154228,103.7650786,2033,1729s,routes,1,
+FULL,FABER RESIDENCE,1.322664255455346,103.7538723074732,2,ChIJL52pCg8Q2jERgiWsODe3X9I,Jurong East,1.3331441,103.74234009999999,2165,1810s,routes,0,
+FULL,FABER RESIDENCE,1.322664255455346,103.7538723074732,3,ChIJy37FHD8Q2jERQrs731bZT5Y,Bukit Batok,1.3490609999999998,103.7495977,3819,3183s,routes,0,
+FULL,FAIRHAVEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FALCON CREST,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FAR EAST MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FARRER COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FARRER GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FERNHILL APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FERNHILL GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FERRA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FIRST MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FLORENCE REGENCY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FLYNN PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FOH PIN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FORD MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FORTREDALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FORTUNA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,FRASER SUITES,1.293278325478865,103.8271925985652,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1576,1358s,routes,1,
+FULL,FRASER SUITES,1.293278325478865,103.8271925985652,2,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,1828,1564s,routes,0,
+FULL,FRASER SUITES,1.293278325478865,103.8271925985652,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2553,2167s,routes,0,
+FULL,FURAMA TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GALLERIA APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GARDEN APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GARDENIA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GENESIS BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GILLMAN HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GILSTEAD VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GLENVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GLORIA MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOH & GOH BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOLDEN HILL CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOLDEN MILE COMPLEX,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOLDEN TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOLDHILL MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOODLUCK GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOODLUCK VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOODRICH PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GOODWILL MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRACE COURT,1.314311261516183,103.9289726803307,1,ChIJq_0PDLMi2jERb6799gqyk2E,Bedok,1.3239319,103.92964479999999,1480,1278s,routes,1,
+FULL,GRACE COURT,1.314311261516183,103.9289726803307,2,ChIJ-QrO4p8i2jER7WO8ltdRFwc,Marine Terrace,1.30681,103.91453,2236,1847s,routes,0,
+FULL,GRACE COURT,1.314311261516183,103.9289726803307,3,ChIJ9Qq5NwcY2jERMkhHdGleiKk,Kembangan,1.3209997999999998,103.91290389999999,2470,2040s,routes,0,
+FULL,GRAND DUCHESS AT ST PATRICK'S,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRAND DUNMAN,1.307930119572467,103.890384748086,1,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1655,1412s,routes,1,
+FULL,GRAND DUNMAN,1.307930119572467,103.890384748086,2,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,1777,1521s,routes,0,
+FULL,GRAND DUNMAN,1.307930119572467,103.890384748086,3,ChIJ1--Qyk4Y2jERqHYnktErHrM,Stadium,1.30284,103.87535,1898,1573s,routes,0,
+FULL,GRAND TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRANGE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRANGE GARDEN,1.356403752012596,103.731654738464,1,ChIJy37FHD8Q2jERQrs731bZT5Y,Bukit Batok,1.3490609999999998,103.7495977,3537,2983s,routes,1,
+FULL,GRANGE GARDEN,1.356403752012596,103.731654738464,2,ChIJmYDhHjYQ2jERn_eQZlaFlkw,Bukit Gombak,1.3587805,103.7519975,3545,2979s,routes,0,
+FULL,GRANGE GARDEN,1.356403752012596,103.731654738464,3,ChIJUeGvkh4Q2jER21Tz2-_e-_I,Chinese Garden,1.3424249,103.73259240000002,4424,3722s,routes,0,
+FULL,GRANGE MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRANGE TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRANGEFORD APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GRAY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GREEN LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GREEN MEADOWS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GREENACRES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GREENLANE APARTMENT,1.310980708161205,103.8931878697638,1,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,967,831s,routes,1,
+FULL,GREENLANE APARTMENT,1.310980708161205,103.8931878697638,2,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,1908,1603s,routes,0,
+FULL,GREENLANE APARTMENT,1.310980708161205,103.8931878697638,3,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1922,1617s,routes,0,
+FULL,GRENVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,GUILLEMARD COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HABITAT ONE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HAIG MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HAMPTON COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HANG TAT GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HARBOURSIDE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HARMONY MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HEIWA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HERTFORD APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HILL HOUSE,1.295302013838047,103.8395918901949,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1142,932s,routes,1,
+FULL,HILL HOUSE,1.295302013838047,103.8395918901949,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1730,1406s,routes,0,
+FULL,HILL HOUSE,1.295302013838047,103.8395918901949,3,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1936,1577s,routes,0,
+FULL,HILLHAVEN,1.362086638096114,103.7635210758574,1,ChIJVXo4D1MQ2jERrFd9ABXPItU,Hillview,1.3622225,103.7670744,432,353s,routes,1,
+FULL,HILLHAVEN,1.362086638096114,103.7635210758574,2,ChIJwTNm4a0R2jERoSGLsGQZveQ,Cashew,1.3699474999999999,103.76454729999999,1201,984s,routes,0,
+FULL,HILLHAVEN,1.362086638096114,103.7635210758574,3,ChIJh8lIEK4R2jERJD9YhuWqmYQ,Cashew MRT Station (Downtown Line),1.3701314999999998,103.7644218,1229,1006s,routes,0,
+FULL,HILLOCK GREEN,1.385096319486065,103.833849401084,1,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,911,753s,routes,1,
+FULL,HILLOCK GREEN,1.385096319486065,103.833849401084,2,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,1931,1658s,routes,0,
+FULL,HILLOCK GREEN,1.385096319486065,103.833849401084,3,ChIJn0tVp-oW2jERdiqBIe4em60,Yio Chu Kang,1.3816929,103.84505159999999,2168,1795s,routes,0,
+FULL,HILLTOP APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HILTON TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HIMIKO COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HIN SENG GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HJ HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOLLAND APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOLLAND CREST,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOLLAND HILL MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOLLANDIA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HONG LEONG GARDEN SHOPPING CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HONG YUN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOOT KIAM MANSION,1.296482472991937,103.8300032109962,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1031,903s,routes,1,
+FULL,HOOT KIAM MANSION,1.296482472991937,103.8300032109962,2,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2160,1847s,routes,0,
+FULL,HOOT KIAM MANSION,1.296482472991937,103.8300032109962,3,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,2524,2197s,routes,0,
+FULL,HOOVER FLATS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HORIZON VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HOUGANG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HUA COURT,1.311518859820903,103.933086390764,1,ChIJHXd6Tbwi2jER9EJRh8gLrKc,Siglap,1.30979,103.92967,486,390s,routes,1,
+FULL,HUA COURT,1.311518859820903,103.933086390764,2,ChIJKa5Rw8Yi2jER3anuZe7Elqg,Bayshore,1.3128499999999999,103.94126,1569,1329s,routes,0,
+FULL,HUA COURT,1.311518859820903,103.933086390764,3,ChIJq_0PDLMi2jERb6799gqyk2E,Bedok,1.3239319,103.92964479999999,2229,1910s,routes,0,
+FULL,HUME PARK II,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,HUP CHEONG MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,INSTITUTION VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,IXORA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,J'DEN,1.333355488712566,103.7401820407749,1,ChIJL52pCg8Q2jERgiWsODe3X9I,Jurong East,1.3331441,103.74234009999999,627,510s,routes,1,
+FULL,J'DEN,1.333355488712566,103.7401820407749,2,ChIJUeGvkh4Q2jER21Tz2-_e-_I,Chinese Garden,1.3424249,103.73259240000002,1751,1466s,routes,0,
+FULL,J'DEN,1.333355488712566,103.7401820407749,3,ChIJy37FHD8Q2jERQrs731bZT5Y,Bukit Batok,1.3490609999999998,103.7495977,3127,2652s,routes,0,
+FULL,J@63,1.314132665374599,103.909109988244,1,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1356,1159s,routes,1,
+FULL,J@63,1.314132665374599,103.909109988244,2,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1921,1612s,routes,0,
+FULL,J@63,1.314132665374599,103.909109988244,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2366,1951s,routes,0,
+FULL,JADE GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JADE TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JALAN BESAR CONSERVATION AREA,1.306212562942511,103.8556271185759,1,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,866,760s,routes,1,
+FULL,JALAN BESAR CONSERVATION AREA,1.306212562942511,103.8556271185759,2,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1759,1482s,routes,0,
+FULL,JALAN BESAR CONSERVATION AREA,1.306212562942511,103.8556271185759,3,ChIJg-1OCaYZ2jERrP1VjFszkFQ,Esplanade,1.2940432,103.85540929999999,1829,1565s,routes,0,
+FULL,JANSEN HOUSE,1.359810586773813,103.8764981524387,1,ChIJWdbL2K8X2jERF0iydtRZtD0,The 'Eylim,1.3560511,103.8795124,578,489s,routes,1,
+FULL,JANSEN HOUSE,1.359810586773813,103.8764981524387,2,ChIJJ8F39rMX2jERDK76MHa6RwE,Kovan,1.359746,103.88427759999999,1341,1070s,routes,0,
+FULL,JANSEN HOUSE,1.359810586773813,103.8764981524387,3,ChIJP6_oVKEX2jER8tuSBXrr2es,Serangoon,1.3499615000000003,103.8734128,1538,1325s,routes,0,
+FULL,JANSEN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JASMINE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JERVOIS GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JERVOIS GREEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JERVOIS MANSION,1.293138825508551,103.8240149016681,1,ChIJyVjyzn4Z2jERDXskfR5wNjY,Tiong Bahru,1.285734,103.8269413,1232,1080s,routes,1,
+FULL,JERVOIS MANSION,1.293138825508551,103.8240149016681,2,ChIJQ2MJTysa2jERGZ-q0JXY0qg,Redhill,1.2893577000000003,103.8169911,1521,1258s,routes,0,
+FULL,JERVOIS MANSION,1.293138825508551,103.8240149016681,3,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1927,1624s,routes,0,
+FULL,JERVOIS PRIVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JIN FU APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JOO CHIAT APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JOY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JOYFUL MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,JUBILATION APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,K SUITES,1.312585161793517,103.9079059878501,1,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1229,1058s,routes,1,
+FULL,K SUITES,1.312585161793517,103.9079059878501,2,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1364,1172s,routes,0,
+FULL,K SUITES,1.312585161793517,103.9079059878501,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2238,1850s,routes,0,
+FULL,KAI SHENG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KAP RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KARTAR APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KASSIA,1.357096306242575,103.9655019003751,1,ChIJp4zUhgQ92jERlhdtctKU4xo,Tampines East,1.3555823999999999,103.9552009,1799,1607s,routes,1,
+FULL,KASSIA,1.357096306242575,103.9655019003751,2,ChIJtcq9et882jERXFLqMR93eiw,Upper Changi,1.34174,103.96146999999999,2213,1870s,routes,0,
+FULL,KASSIA,1.357096306242575,103.9655019003751,3,ChIJU1XTRiI92jERegtsZETZgPU,Simei,1.3431678999999999,103.95335809999999,3186,2702s,routes,0,
+FULL,KATONG MANSION,1.300078177214362,103.8980119597053,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1314,1107s,routes,1,
+FULL,KATONG MANSION,1.300078177214362,103.8980119597053,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1829,1544s,routes,0,
+FULL,KATONG MANSION,1.300078177214362,103.8980119597053,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2234,1926s,routes,0,
+FULL,KATONG OMEGA APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KATONG PARK TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KATONG PLAZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KATONG SHOPPING ARCADE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KELLETT COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KEMAMAN POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KEMAMAN VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KEMBANGAN VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KEN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KILAT 19,1.340842427603036,103.7736379994818,1,ChIJ3R4LA4oQ2jERNSHfbiszO48,Beauty World,1.3417021999999998,103.7760095,433,377s,routes,1,
+FULL,KILAT 19,1.340842427603036,103.7736379994818,2,ChIJk5Tkd4UQ2jERkkBBwZK8CMI,King Albert Park,1.3356884,103.78319259999999,1411,1234s,routes,0,
+FULL,KILAT 19,1.340842427603036,103.7736379994818,3,ChIJmw0-A1oQ2jER_tMPXIXWal8,Hume,1.3545080999999999,103.7692957,2081,1861s,routes,0,
+FULL,KILLINEY APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KIM KEAT MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KIM SENG PLAZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KIM TIAN PLAZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KIM WEE MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KING'S FLATS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KISMIS LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KLASSIC COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KORAKUEN ORANGE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KOVAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,KOVAN LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LA VENTURA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LA VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LAKESIDE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LAKEVIEW ESTATE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LANDMARK TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LAUREL PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LAVENDER RESIDENCE,1.314679592106461,103.8602204083012,1,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,1022,900s,routes,1,
+FULL,LAVENDER RESIDENCE,1.314679592106461,103.8602204083012,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,1994,1714s,routes,0,
+FULL,LAVENDER RESIDENCE,1.314679592106461,103.8602204083012,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2882,2455s,routes,0,
+FULL,LE MARQUE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LEICESTER COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LENGKONG APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LENGKONG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LENGKONG GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LENTOR CENTRAL RESIDENCES,1.385805868144868,103.8323423066927,1,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,770,636s,routes,1,
+FULL,LENTOR CENTRAL RESIDENCES,1.385805868144868,103.8323423066927,2,ChIJn0tVp-oW2jERdiqBIe4em60,Yio Chu Kang,1.3816929,103.84505159999999,2026,1679s,routes,0,
+FULL,LENTOR CENTRAL RESIDENCES,1.385805868144868,103.8323423066927,3,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,2132,1819s,routes,0,
+FULL,LENTOR HILLS RESIDENCES,1.383434132225438,103.8342326152366,1,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,771,624s,routes,1,
+FULL,LENTOR HILLS RESIDENCES,1.383434132225438,103.8342326152366,2,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,1608,1394s,routes,0,
+FULL,LENTOR HILLS RESIDENCES,1.383434132225438,103.8342326152366,3,ChIJn0tVp-oW2jERdiqBIe4em60,Yio Chu Kang,1.3816929,103.84505159999999,2135,1762s,routes,0,
+FULL,LENTOR MANSION,1.383275142628676,103.8331481018366,1,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,750,603s,routes,1,
+FULL,LENTOR MANSION,1.383275142628676,103.8331481018366,2,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,1587,1374s,routes,0,
+FULL,LENTOR MANSION,1.383275142628676,103.8331481018366,3,ChIJn0tVp-oW2jERdiqBIe4em60,Yio Chu Kang,1.3816929,103.84505159999999,2063,1699s,routes,0,
+FULL,LENTORIA,1.38196577099896,103.8345699110358,1,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,561,444s,routes,1,
+FULL,LENTORIA,1.38196577099896,103.8345699110358,2,ChIJpTN1O9sW2jERTNDcZHJEcVY,Mayflower,1.3728996999999998,103.8369542,1398,1214s,routes,0,
+FULL,LENTORIA,1.38196577099896,103.8345699110358,3,ChIJn0tVp-oW2jERdiqBIe4em60,Yio Chu Kang,1.3816929,103.84505159999999,1874,1540s,routes,0,
+FULL,LEONG BEE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LES JARDINS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LESHAN GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LEWIS COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LEYUKE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIANG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIANG JI MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIANG SEAH COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIBERTE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIM HOCK KIM BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LIMAU MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LINCOLN LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LINCOLN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LINCOLNSVALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LOCK CHO APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LODGE 77,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LONG NIAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LOTUS AT JERVOIS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LOTUS AT PASIR PANJANG,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LOWLAND COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LUCKY TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LUXURY APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,LYNDENWOODS,1.291262434303802,103.7883758033684,1,ChIJOdueMVIa2jERhE4TnhWtNpo,Kent Ridge,1.2934599999999998,103.78462999999999,1025,855s,routes,1,
+FULL,LYNDENWOODS,1.291262434303802,103.7883758033684,2,ChIJi9J7UkUa2jEREUidaQaWpMU,One-North,1.2998113,103.78759470000001,2178,1849s,routes,0,
+FULL,LYNDENWOODS,1.291262434303802,103.7883758033684,3,ChIJCRjzJ68b2jER7QSuHv9dtN4,Haw Par Villa,1.2831059999999999,103.7819799,2273,1938s,routes,0,
+FULL,LYNNSVILLE,1.288277561413751,103.7769382656891,1,ChIJCRjzJ68b2jER7QSuHv9dtN4,Haw Par Villa,1.2831059999999999,103.7819799,896,721s,routes,1,
+FULL,LYNNSVILLE,1.288277561413751,103.7769382656891,2,ChIJOdueMVIa2jERhE4TnhWtNpo,Kent Ridge,1.2934599999999998,103.78462999999999,1961,1694s,routes,0,
+FULL,LYNNSVILLE,1.288277561413751,103.7769382656891,3,ChIJf0qJ7Lsb2jERvOs0xj0jZho,Pasir Panjang,1.2760684,103.79190369999999,2318,1893s,routes,0,
+FULL,MACKENZIE MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MAISON ROYALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MAKEWAY VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MANDALAY VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MANGIS PARK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MARBELLA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MARINE PARADE GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MARINE POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MARYLAND POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MAYER MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MAYFAIR GARDENS (DEMOLISHED),,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MEI GARDENS,1.375242953304097,103.7585891286756,1,ChIJ0_xeXrsR2jERpZ7qVzmnpag,Bukit Panjang,1.379,103.76154000000001,946,725s,routes,1,
+FULL,MEI GARDENS,1.375242953304097,103.7585891286756,2,ChIJh8lIEK4R2jERJD9YhuWqmYQ,Cashew MRT Station (Downtown Line),1.3701314999999998,103.7644218,1948,1619s,routes,0,
+FULL,MEI GARDENS,1.375242953304097,103.7585891286756,3,ChIJwTNm4a0R2jERoSGLsGQZveQ,Cashew,1.3699474999999999,103.76454729999999,1976,1642s,routes,0,
+FULL,MELLOW MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MELROSE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MERGUI COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MERGUI LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MERLIN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MEYER BLUE,1.296583071809255,103.891682981836,1,ChIJg_aECkcY2jERfRwtMtOwcbs,Mountbatten,1.3060844,103.8831531,1743,1444s,routes,1,
+FULL,MEYER BLUE,1.296583071809255,103.891682981836,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,2118,1735s,routes,0,
+FULL,MEYER BLUE,1.296583071809255,103.891682981836,3,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,2298,1956s,routes,0,
+FULL,MEYER TOWER,1.296803808521273,103.8899259447603,1,ChIJg_aECkcY2jERfRwtMtOwcbs,Mountbatten,1.3060844,103.8831531,1578,1308s,routes,1,
+FULL,MEYER TOWER,1.296803808521273,103.8899259447603,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1954,1619s,routes,0,
+FULL,MEYER TOWER,1.296803808521273,103.8899259447603,3,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,2416,2057s,routes,0,
+FULL,MILLAGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MIMOSA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MIN YUAN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MINTON COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MINTON RISE CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MIRAMAR MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MONDO MANSION BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOON MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOULMEIN APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOULMEIN GREEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOULMEIN LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOUNT EMILY TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MOUNT SOPHIA APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MULAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MULTI-VIEW TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,MUTUAL COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NAGA COURTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NAM PENG CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NANAK MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NARRA RESIDENCES,1.368665988743867,103.7744814527385,1,ChIJVXo4D1MQ2jERrFd9ABXPItU,Hillview,1.3622225,103.7670744,1342,1154s,routes,1,
+FULL,NARRA RESIDENCES,1.368665988743867,103.7744814527385,2,ChIJwTNm4a0R2jERoSGLsGQZveQ,Cashew,1.3699474999999999,103.76454729999999,1560,1240s,routes,0,
+FULL,NARRA RESIDENCES,1.368665988743867,103.7744814527385,3,ChIJh8lIEK4R2jERJD9YhuWqmYQ,Cashew MRT Station (Downtown Line),1.3701314999999998,103.7644218,1588,1261s,routes,0,
+FULL,NASSIM WOODS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NATHAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NATHAN VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NAUNG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NAVA GROVE,1.319711034118939,103.7751027712464,1,ChIJwSNoSo4a2jERJV-XA_Ifq-Q,Clementi,1.3154228,103.7650786,1800,1549s,routes,1,
+FULL,NAVA GROVE,1.319711034118939,103.7751027712464,2,ChIJI4ftDmEa2jERtj1VWjNTNRg,Dover,1.3113849,103.7786069,1935,1586s,routes,0,
+FULL,NAVA GROVE,1.319711034118939,103.7751027712464,3,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,2779,2278s,routes,0,
+FULL,NEWPORT RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NEWTON COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NEWTON HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NEWTON MEADOWS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NEWTON POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NEWTON VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NINETEEN SHELFORD ROAD,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NORFOLK GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NORMANTON PARK (DEMOLISHED),,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NORTHERN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NORWOOD GRAND,1.42853654796475,103.7908366981801,1,ChIJg0PxZrwT2jERUjpngzXGGO0,Woodlands South,1.4273512,103.79314819999999,304,239s,routes,1,
+FULL,NORWOOD GRAND,1.42853654796475,103.7908366981801,2,ChIJUxRTh6gT2jERt8YBJbwhN4k,Woodlands,1.4369162,103.7864807,1605,1375s,routes,0,
+FULL,NORWOOD GRAND,1.42853654796475,103.7908366981801,3,ChIJ9dSHDHUT2jER2OAwCRnDDKk,Admiralty,1.44059,103.80099,2067,1688s,routes,0,
+FULL,NOVELIS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,NOVENA VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OAKSWOOD HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OCEAN APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OCEAN FRONT SUITES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OCTAVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OLINA LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,OLIVIO,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ONE CLAYMORE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ONE MARINA GARDENS,1.275800608512697,103.8629361923512,1,ChIJPYxKUwQZ2jER7KUuPbBTsUQ,Bayfront,1.2813386,103.85895509999999,1061,879s,routes,1,
+FULL,ONE MARINA GARDENS,1.275800608512697,103.8629361923512,2,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,1944,1647s,routes,0,
+FULL,ONE MARINA GARDENS,1.275800608512697,103.8629361923512,3,ChIJj7KfORMZ2jERJAUe-Q0aW5I,Tanjong Pagar,1.2765199999999999,103.84586,2545,2113s,routes,0,
+FULL,ONE ST MICHAEL'S,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ONE TREE HILL GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ONE TREE LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ORCHARD POINT,1.30137135194991,103.8405496392505,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,672,557s,routes,1,
+FULL,ORCHARD POINT,1.30137135194991,103.8405496392505,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1305,1111s,routes,0,
+FULL,ORCHARD POINT,1.30137135194991,103.8405496392505,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1770,1483s,routes,0,
+FULL,ORCHARD SOPHIA,1.303018430937133,103.8464269175984,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,666,638s,routes,1,
+FULL,ORCHARD SOPHIA,1.303018430937133,103.8464269175984,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,1391,1125s,routes,0,
+FULL,ORCHARD SOPHIA,1.303018430937133,103.8464269175984,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1490,1344s,routes,0,
+FULL,ORCHID MANSION,1.299053945483162,103.8994169435621,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1283,1067s,routes,1,
+FULL,ORCHID MANSION,1.299053945483162,103.8994169435621,2,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,2042,1705s,routes,0,
+FULL,ORCHID MANSION,1.299053945483162,103.8994169435621,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2447,2087s,routes,0,
+FULL,PACIFIC MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PACIFIC VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PALACE MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PALAZZO COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PALM VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PALMWOODS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARISIAN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARK VIEW MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARKTOWN RESIDENCE,1.366848422810875,103.9377763572148,1,ChIJQ2PMxhE92jERiewBne0iww8,Tampines,1.3533165999999999,103.94522099999999,2100,1741s,routes,1,
+FULL,PARKTOWN RESIDENCE,1.366848422810875,103.9377763572148,2,ChIJzTCPALA92jERbKZCdNiIgNA,Pasir Ris,1.3732126999999998,103.949277,2491,2088s,routes,0,
+FULL,PARKTOWN RESIDENCE,1.366848422810875,103.9377763572148,3,ChIJB2-8RRU92jERSjWoEmxmpds,Tampines West,1.3455617,103.9382061,2587,2141s,routes,0,
+FULL,PARKVIEW CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARKVIEW ECLAT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARKWAY LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARKWAY MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PARQ BELLA,1.307816169037856,103.9044266437804,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,657,569s,routes,1,
+FULL,PARQ BELLA,1.307816169037856,103.9044266437804,2,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1695,1413s,routes,0,
+FULL,PARQ BELLA,1.307816169037856,103.9044266437804,3,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1948,1613s,routes,0,
+FULL,PARRY GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PASIR RIS GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PATERSON LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PATERSON MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PATERSON TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEACE MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEAK COURT CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEARL BANK APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEARLS CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEBBLE GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PECK HAY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PECK HAY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PECK HAY VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEILY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PELIKAT COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PELIKAT MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PENDER COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PENRITH,1.296178269403031,103.808766507183,1,ChIJx9rOZTEa2jERlZRq0UkmFS4,Queenstown,1.2942069999999999,103.80607520000001,668,572s,routes,1,
+FULL,PENRITH,1.296178269403031,103.808766507183,2,ChIJQ2MJTysa2jERGZ-q0JXY0qg,Redhill,1.2893577000000003,103.8169911,1567,1306s,routes,0,
+FULL,PENRITH,1.296178269403031,103.808766507183,3,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,2712,2328s,routes,0,
+FULL,PEONY MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PEOPLE'S MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PERFECT TEN,1.317229413954491,103.8324859888903,1,ChIJTxTEcecZ2jERVySfJurj8Ok,Novena,1.3204399999999998,103.84383,1975,1723s,routes,1,
+FULL,PERFECT TEN,1.317229413954491,103.8324859888903,2,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,2318,1951s,routes,0,
+FULL,PERFECT TEN,1.317229413954491,103.8324859888903,3,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,2562,2176s,routes,0,
+FULL,PERMAI COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PETAIN RD/TYRWHITT RD CONSERVATION AREA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PHOENIX COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PHOENIX MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PIN TJOE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PINE VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PINETREE HILL,1.319290278808197,103.7762977483793,1,ChIJI4ftDmEa2jERtj1VWjNTNRg,Dover,1.3113849,103.7786069,2154,1764s,routes,1,
+FULL,PINETREE HILL,1.319290278808197,103.7762977483793,2,ChIJwSNoSo4a2jERJV-XA_Ifq-Q,Clementi,1.3154228,103.7650786,2300,1924s,routes,0,
+FULL,PINETREE HILL,1.319290278808197,103.7762977483793,3,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,2635,2150s,routes,0,
+FULL,POLLEN & BLEU,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,POMEX COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PRIMO RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PRINCESS FLATS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PROMENADE PEAK,1.291570080487509,103.8331424808251,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1636,1396s,routes,1,
+FULL,PROMENADE PEAK,1.291570080487509,103.8331424808251,2,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1879,1648s,routes,0,
+FULL,PROMENADE PEAK,1.291570080487509,103.8331424808251,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2358,1997s,routes,0,
+FULL,PROMISES GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PROSPECT COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PROSPECT MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PROSPERITY MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PUBLIC MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PULLMAN RESIDENCES NEWTON,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,PUMPKIN GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,QUEEN'S FLAT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,QUEENSWAY TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,QUELIN GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RACE COURSE BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RACE COURSE RD/OWEN RD CON AREA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RADIANT COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAINBOW GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAINBOW MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAINTREE GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAJAH MAISONETTE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAJAH TOWERS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RAMBAI COURT,1.31122835768041,103.9055089406025,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1146,976s,routes,1,
+FULL,RAMBAI COURT,1.31122835768041,103.9055089406025,2,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1433,1214s,routes,0,
+FULL,RAMBAI COURT,1.31122835768041,103.9055089406025,3,ChIJh13Ndz8Y2jERAqyDuHh6Qfs,Dakota,1.3084099999999999,103.888814,1982,1636s,routes,0,
+FULL,RAMBUTAN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RANGOON APARTMENTS,1.314045209410513,103.8543871622303,1,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,1691,1459s,routes,1,
+FULL,RANGOON APARTMENTS,1.314045209410513,103.8543871622303,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,1947,1676s,routes,0,
+FULL,RANGOON APARTMENTS,1.314045209410513,103.8543871622303,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2393,2011s,routes,0,
+FULL,RE CHARGE @ 303,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,REGENT COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,REGENT GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,REGENTVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RICHARDS MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIO CASA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVER GREEN,1.294770653845764,103.8332090334971,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1458,1248s,routes,1,
+FULL,RIVER GREEN,1.294770653845764,103.8332090334971,2,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1883,1591s,routes,0,
+FULL,RIVER GREEN,1.294770653845764,103.8332090334971,3,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,2277,1949s,routes,0,
+FULL,RIVER VALLEY VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVERIA LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVERIA VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVERWALK APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVIERA POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RIVIERE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROBIN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROBIN STAR,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROSE COURT,1.309869094473561,103.8931326362503,1,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1126,964s,routes,1,
+FULL,ROSE COURT,1.309869094473561,103.8931326362503,2,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,2004,1676s,routes,0,
+FULL,ROSE COURT,1.309869094473561,103.8931326362503,3,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,2081,1750s,routes,0,
+FULL,ROSE GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROSE MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROVGALE MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ROYALVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RUBY APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,RUBY PLAZA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SAMFORD MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SANCTUARY@NEWTON,1.316034069066307,103.8415787273206,1,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2194,1851s,routes,1,
+FULL,SANCTUARY@NEWTON,1.316034069066307,103.8415787273206,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,2656,2263s,routes,0,
+FULL,SANCTUARY@NEWTON,1.316034069066307,103.8415787273206,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2809,2349s,routes,0,
+FULL,SARINAVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SARKIES COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SCENECA RESIDENCE,1.3278651540266,103.9454756341077,1,ChIJgRre4DI92jERBpnxSiBKwwo,Tanah Merah,1.3272443999999999,103.9464897,823,740s,routes,1,
+FULL,SCENECA RESIDENCE,1.3278651540266,103.9454756341077,2,ChIJEx8s5dc82jER1_xARHMwmww,Expo,1.3344367,103.9615998,2326,1930s,routes,0,
+FULL,SCENECA RESIDENCE,1.3278651540266,103.9454756341077,3,ChIJtcq9et882jERXFLqMR93eiw,Upper Changi,1.34174,103.96146999999999,2600,2219s,routes,0,
+FULL,SEA BREEZE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SEEDEVI,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SENG MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SERAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SERANGOON APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SERENE HOUSE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SERENE VIEW MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SEVEN HOLT ROAD,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHAN MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHANGHAI COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHANGHAI RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD BOUGENVILLA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHELFORD VALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHERWOOD TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHIBA APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHU JIN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SHUNFU VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SIGLAP SHOPPING CENTRE,1.312877129940356,103.92394992858,1,ChIJ9Qq5NwcY2jERMkhHdGleiKk,Kembangan,1.3209997999999998,103.91290389999999,1923,1585s,routes,1,
+FULL,SIGLAP SHOPPING CENTRE,1.312877129940356,103.92394992858,2,ChIJq_0PDLMi2jERb6799gqyk2E,Bedok,1.3239319,103.92964479999999,2070,1759s,routes,0,
+FULL,SIGLAP SHOPPING CENTRE,1.312877129940356,103.92394992858,3,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,2529,2103s,routes,0,
+FULL,SILVER TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SIMONVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SIMS MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SKYE AT HOLLAND,1.312164545540392,103.7926897413955,1,ChIJibY7cGsa2jER6eVsmwG3vQo,Holland Village,1.3111753,103.79612890000001,596,492s,routes,1,
+FULL,SKYE AT HOLLAND,1.312164545540392,103.7926897413955,2,ChIJsQvqY0Ia2jER_QrezH_adnY,Buona Vista,1.3072116999999999,103.79059939999999,725,650s,routes,0,
+FULL,SKYE AT HOLLAND,1.312164545540392,103.7926897413955,3,ChIJhY0kWUca2jERcQr3RFss0Fg,Commonwealth,1.3023957,103.79831569999999,1404,1131s,routes,0,
+FULL,SKYLINE 360 @ SAINT THOMAS WALK,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SKYSUITES17,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SKYWATERS RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SMART HOUSE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SOMMERVILLE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SOPHIA APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SOPHIA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SOPHIA MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SOPHIA VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SORA,1.334308217234073,103.7254406272162,1,ChIJRbJiD-cP2jERkXkR2OZh8hI,Lakeside,1.3443083,103.7208642,1397,1157s,routes,1,
+FULL,SORA,1.334308217234073,103.7254406272162,2,ChIJUeGvkh4Q2jER21Tz2-_e-_I,Chinese Garden,1.3424249,103.73259240000002,1961,1594s,routes,0,
+FULL,SORA,1.334308217234073,103.7254406272162,3,ChIJL52pCg8Q2jERgiWsODe3X9I,Jurong East,1.3331441,103.74234009999999,3150,2609s,routes,0,
+FULL,SPOTTISWOODE APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SPRING MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SPRINGLEAF RESIDENCE,1.396126713376168,103.8178192809631,1,ChIJWxBbfFQR2jERCWAvt95HVq0,Springleaf,1.3975674999999999,103.818356,223,197s,routes,1,
+FULL,SPRINGLEAF RESIDENCE,1.396126713376168,103.8178192809631,2,ChIJrxLCiA0U2jER-R_D8ehBje4,Khatib,1.4173483000000002,103.83297309999999,3355,2781s,routes,0,
+FULL,SPRINGLEAF RESIDENCE,1.396126713376168,103.8178192809631,3,ChIJN_zQ8bgW2jER79qHnjn0Hxc,Lentor,1.3844157,103.8368101,3943,3282s,routes,0,
+FULL,ST FRANCIS LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MARTIN RESIDENCE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MARTIN'S,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MARTIN'S COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MARTIN'S LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MARTIN'S MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MICHAEL REGENCY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MICHAEL VILLA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MICHAEL'S CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MICHAEL'S COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST MICHAEL'S PLACE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S GREEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S LOFT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST PATRICK'S VILLA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS SUITES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ST THOMAS VILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,STAR MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,STEVEN'S COURT,1.319553251183877,103.825821938683,1,ChIJNTPucPkZ2jER7fKC_YSmscM,Stevens,1.3199277999999999,103.8261534,168,135s,routes,1,
+FULL,STEVEN'S COURT,1.319553251183877,103.825821938683,2,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,1412,1198s,routes,0,
+FULL,STEVEN'S COURT,1.319553251183877,103.825821938683,3,ChIJr18Rv-4Z2jERXFDaPCqD8UU,Newton,1.31232,103.83798999999999,2011,1667s,routes,0,
+FULL,STILLINGIA COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,STRAITS AT JOO CHIAT,1.31497311045681,103.9084272638598,1,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1201,1029s,routes,1,
+FULL,STRAITS AT JOO CHIAT,1.31497311045681,103.9084272638598,2,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1849,1563s,routes,0,
+FULL,STRAITS AT JOO CHIAT,1.31497311045681,103.9084272638598,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2210,1821s,routes,0,
+FULL,SUFFOLK APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SUITES TWENTY-TWO,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SUMMER APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SUN ROSIER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SUNNYVALE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SUNSHINE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SURREY MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SURREY POINT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,SURREY TOWER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAI GIN APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAI KENG COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAI KENG SHOPPING CENTRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAI WAH BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAMPINES COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TANAH MERAH MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TANGLIN HOUSE,1.302623658172663,103.8211078913566,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1582,1319s,routes,1,
+FULL,TANGLIN HOUSE,1.302623658172663,103.8211078913566,2,ChIJQ2MJTysa2jERGZ-q0JXY0qg,Redhill,1.2893577000000003,103.8169911,2145,1778s,routes,0,
+FULL,TANGLIN HOUSE,1.302623658172663,103.8211078913566,3,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2479,2063s,routes,0,
+FULL,TANGLIN STUDIO,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TARNG CHERN BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TAT LEE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TEACHERS' HOUSING ESTATE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TELOK KURAU VIEW,1.310740291072896,103.9096923726337,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1271,1090s,routes,1,
+FULL,TELOK KURAU VIEW,1.310740291072896,103.9096923726337,2,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1513,1287s,routes,0,
+FULL,TELOK KURAU VIEW,1.310740291072896,103.9096923726337,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2522,2079s,routes,0,
+FULL,TEMBUSU GRAND,1.305828576421015,103.8965935933346,1,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1552,1321s,routes,1,
+FULL,TEMBUSU GRAND,1.305828576421015,103.8965935933346,2,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1581,1346s,routes,0,
+FULL,TEMBUSU GRAND,1.305828576421015,103.8965935933346,3,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,2342,1978s,routes,0,
+FULL,TERRA HILL,1.277949934287118,103.7933282556299,1,ChIJszi8l8Eb2jERMYr0lHRAEBo,Labrador Park,1.2723300000000002,103.80293999999999,1554,1296s,routes,1,
+FULL,TERRA HILL,1.277949934287118,103.7933282556299,2,ChIJCRjzJ68b2jER7QSuHv9dtN4,Haw Par Villa,1.2831059999999999,103.7819799,1655,1369s,routes,0,
+FULL,TERRA HILL,1.277949934287118,103.7933282556299,3,ChIJWbYBqsIb2jERNsaPjl0rGdc,Telok Blangah,1.2707282,103.80987859999999,2414,2044s,routes,0,
+FULL,THE ALBANY,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ALBRACCA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ARCADY AT BOON KENG,1.323273896919334,103.8638463961399,1,ChIJ-X9Rv8UZ2jERgfIAvUtw1vw,Farrer Park,1.31236,103.85418,1809,1494s,routes,1,
+FULL,THE ARCADY AT BOON KENG,1.323273896919334,103.8638463961399,2,ChIJ580nZDQY2jERNmMG5GQHQMI,Kallang,1.3114865,103.8713507,2272,1903s,routes,0,
+FULL,THE ARCADY AT BOON KENG,1.323273896919334,103.8638463961399,3,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,2289,1956s,routes,0,
+FULL,THE ARDMORE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ASPINE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE BENTLY RESIDENCES@KOVAN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE BLISSVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE BOTANY AT DAIRY FARM,1.366401289445761,103.772610828237,1,ChIJVXo4D1MQ2jERrFd9ABXPItU,Hillview,1.3622225,103.7670744,969,833s,routes,1,
+FULL,THE BOTANY AT DAIRY FARM,1.366401289445761,103.772610828237,2,ChIJwTNm4a0R2jERoSGLsGQZveQ,Cashew,1.3699474999999999,103.76454729999999,1543,1203s,routes,0,
+FULL,THE BOTANY AT DAIRY FARM,1.366401289445761,103.772610828237,3,ChIJh8lIEK4R2jERJD9YhuWqmYQ,Cashew MRT Station (Downtown Line),1.3701314999999998,103.7644218,1571,1225s,routes,0,
+FULL,THE BOUNGAINVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE BROOKS I & II,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE CHERRYWOOD,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE CITRON RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE COLLECTIVE AT ONE SOPHIA,1.301412264200912,103.849115522647,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,891,725s,routes,1,
+FULL,THE COLLECTIVE AT ONE SOPHIA,1.301412264200912,103.849115522647,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,1037,867s,routes,0,
+FULL,THE COLLECTIVE AT ONE SOPHIA,1.301412264200912,103.849115522647,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1341,1131s,routes,0,
+FULL,THE CONTINUUM,1.310997106057535,103.8957201937168,1,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1098,929s,routes,1,
+FULL,THE CONTINUUM,1.310997106057535,103.8957201937168,2,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1871,1569s,routes,0,
+FULL,THE CONTINUUM,1.310997106057535,103.8957201937168,3,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,2278,1937s,routes,0,
+FULL,THE ELEGANCE @ CHANGI,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ESQUIRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ESTORIL,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE GATZ,1.312953717048383,103.886753196091,1,ChIJO7BsLzsY2jER-OVKkQKKm64,Aljunied,1.31643,103.88291,914,776s,routes,1,
+FULL,THE GATZ,1.312953717048383,103.886753196091,2,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,1270,1085s,routes,0,
+FULL,THE GATZ,1.312953717048383,103.886753196091,3,ChIJ580nZDQY2jERNmMG5GQHQMI,Kallang,1.3114865,103.8713507,2027,1744s,routes,0,
+FULL,THE GLENWOOD,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE HABITAT II,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE HAMLET,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE HILL @ONE-NORTH,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE HILLIER,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE HILLSHORE,1.28674116675747,103.7801490977476,1,ChIJCRjzJ68b2jER7QSuHv9dtN4,Haw Par Villa,1.2831059999999999,103.7819799,561,459s,routes,1,
+FULL,THE HILLSHORE,1.28674116675747,103.7801490977476,2,ChIJf0qJ7Lsb2jERvOs0xj0jZho,Pasir Panjang,1.2760684,103.79190369999999,2002,1671s,routes,0,
+FULL,THE HILLSHORE,1.28674116675747,103.7801490977476,3,ChIJOdueMVIa2jERhE4TnhWtNpo,Kent Ridge,1.2934599999999998,103.78462999999999,2136,1840s,routes,0,
+FULL,THE LAKEGARDEN RESIDENCES,1.335788242390715,103.7255937465532,1,ChIJRbJiD-cP2jERkXkR2OZh8hI,Lakeside,1.3443083,103.7208642,1299,1079s,routes,1,
+FULL,THE LAKEGARDEN RESIDENCES,1.335788242390715,103.7255937465532,2,ChIJUeGvkh4Q2jER21Tz2-_e-_I,Chinese Garden,1.3424249,103.73259240000002,2173,1767s,routes,0,
+FULL,THE LAKEGARDEN RESIDENCES,1.335788242390715,103.7255937465532,3,ChIJZZ5e1JIP2jER3nPOBF7LjTI,Boon Lay,1.3384284,103.7059287,3166,2674s,routes,0,
+FULL,THE MERGUI,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE MYST,1.373498638008414,103.7641422438911,1,ChIJh8lIEK4R2jERJD9YhuWqmYQ,Cashew MRT Station (Downtown Line),1.3701314999999998,103.7644218,405,331s,routes,1,
+FULL,THE MYST,1.373498638008414,103.7641422438911,2,ChIJwTNm4a0R2jERoSGLsGQZveQ,Cashew,1.3699474999999999,103.76454729999999,433,354s,routes,0,
+FULL,THE MYST,1.373498638008414,103.7641422438911,3,ChIJ0_xeXrsR2jERpZ7qVzmnpag,Bukit Panjang,1.379,103.76154000000001,830,677s,routes,0,
+FULL,THE ORIE,1.339706754337262,103.8500572904156,1,ChIJj1FG-WkX2jER3BHN3fuR95Y,Braddell,1.3406791999999998,103.84721569999999,383,313s,routes,1,
+FULL,THE ORIE,1.339706754337262,103.8500572904156,2,ChIJ48Ai4mYX2jER5M71MMdN5NY,Toa Payoh,1.3323296999999998,103.84742519999999,1334,1085s,routes,0,
+FULL,THE ORIE,1.339706754337262,103.8500572904156,3,ChIJt4dBe0MX2jERv_W35iW_eSA,Caldecott,1.3376835,103.8395013,1414,1185s,routes,0,
+FULL,THE RESERVE RESIDENCES,1.339933097732375,103.7774163318152,1,ChIJ3R4LA4oQ2jERNSHfbiszO48,Beauty World,1.3417021999999998,103.7760095,757,668s,routes,1,
+FULL,THE RESERVE RESIDENCES,1.339933097732375,103.7774163318152,2,ChIJk5Tkd4UQ2jERkkBBwZK8CMI,King Albert Park,1.3356884,103.78319259999999,1450,1259s,routes,0,
+FULL,THE RESERVE RESIDENCES,1.339933097732375,103.7774163318152,3,ChIJmw0-A1oQ2jER_tMPXIXWal8,Hume,1.3545080999999999,103.7692957,2359,2090s,routes,0,
+FULL,THE RISE @ OXLEY - RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE ROBERTSON OPUS,1.291925541493691,103.8415409219307,1,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,1291,1106s,routes,1,
+FULL,THE ROBERTSON OPUS,1.291925541493691,103.8415409219307,2,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1490,1223s,routes,0,
+FULL,THE ROBERTSON OPUS,1.291925541493691,103.8415409219307,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1694,1387s,routes,0,
+FULL,THE SAPPHIRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE SEN,1.288838562482049,103.8465580247433,1,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,649,550s,routes,1,
+FULL,THE SEN,1.288838562482049,103.8465580247433,2,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,934,795s,routes,0,
+FULL,THE SEN,1.288838562482049,103.8465580247433,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,966,807s,routes,0,
+FULL,THE SHOREFRONT,1.379139821774487,103.9600122528987,1,ChIJzTCPALA92jERbKZCdNiIgNA,Pasir Ris,1.3732126999999998,103.949277,1740,1449s,routes,1,
+FULL,THE SHOREFRONT,1.379139821774487,103.9600122528987,2,ChIJp4zUhgQ92jERlhdtctKU4xo,Tampines East,1.3555823999999999,103.9552009,3848,3331s,routes,0,
+FULL,THE VERMILION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE WATERDALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THE WILSHIRE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,THONG SIA BUILDING,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TIAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TIARA VISTA,1.310866157144144,103.9103518286942,1,ChIJmyNoznMY2jER6Wk_8U4srBA,Marine Parade,1.30347,103.90615,1300,1115s,routes,1,
+FULL,TIARA VISTA,1.310866157144144,103.9103518286942,2,ChIJA08Q0gQY2jERrq60-mOgmxQ,Eunos,1.3197341999999999,103.9028883,1667,1414s,routes,0,
+FULL,TIARA VISTA,1.310866157144144,103.9103518286942,3,ChIJU-xrGhgY2jERLX7VN6dXpsA,Paya Lebar,1.3181607,103.8931436,2676,2206s,routes,0,
+FULL,TK APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TMW MAXWELL,1.279042477699102,103.8446552581064,1,ChIJj7KfORMZ2jERJAUe-Q0aW5I,Tanjong Pagar,1.2765199999999999,103.84586,514,415s,routes,1,
+FULL,TMW MAXWELL,1.279042477699102,103.8446552581064,2,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,972,804s,routes,0,
+FULL,TMW MAXWELL,1.279042477699102,103.8446552581064,3,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,1314,1090s,routes,0,
+FULL,TOH TUCK APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TOHO GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TOHO GREEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TOHO MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TONG WATT MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TORIEVILLE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TREASURES @ G20,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,TUDOR COURT,1.305211902108736,103.8247478929974,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1040,872s,routes,1,
+FULL,TUDOR COURT,1.305211902108736,103.8247478929974,2,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,1936,1615s,routes,0,
+FULL,TUDOR COURT,1.305211902108736,103.8247478929974,3,ChIJQ2MJTysa2jERGZ-q0JXY0qg,Redhill,1.2893577000000003,103.8169911,2646,2209s,routes,0,
+FULL,TULIP GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ULTRA MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,UNION SQUARE RESIDENCES,1.288001080520596,103.8434537136866,1,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,627,530s,routes,1,
+FULL,UNION SQUARE RESIDENCES,1.288001080520596,103.8434537136866,2,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,1095,923s,routes,0,
+FULL,UNION SQUARE RESIDENCES,1.288001080520596,103.8434537136866,3,ChIJz9dNmKYZ2jER1fKcZf6c9Fg,City Hall,1.2931158999999999,103.8520125,1485,1224s,routes,0,
+FULL,UNITED MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,UPPERHOUSE AT ORCHARD BOULEVARD,1.301996042556686,103.8240151072329,1,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1192,969s,routes,1,
+FULL,UPPERHOUSE AT ORCHARD BOULEVARD,1.301996042556686,103.8240151072329,2,ChIJl3JJzpAZ2jERwwtDj3VXBYM,Somerset,1.3005159,103.8385,2088,1713s,routes,0,
+FULL,UPPERHOUSE AT ORCHARD BOULEVARD,1.301996042556686,103.8240151072329,3,ChIJQ2MJTysa2jERGZ-q0JXY0qg,Redhill,1.2893577000000003,103.8169911,2758,2285s,routes,0,
+FULL,VALENCIA,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VENUS MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VERDOR RESIDENCES,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VERMONT I,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VIEW POINT MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VIEWPOINT CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VILLA D'ESTE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VILLA INDAH,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,VILLA MARGAUX,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,W RESIDENCES MARINA VIEW - SINGAPORE,1.276658475936492,103.8498342783428,1,ChIJj7KfORMZ2jERJAUe-Q0aW5I,Tanjong Pagar,1.2765199999999999,103.84586,648,560s,routes,1,
+FULL,W RESIDENCES MARINA VIEW - SINGAPORE,1.276658475936492,103.8498342783428,2,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,1283,1093s,routes,0,
+FULL,W RESIDENCES MARINA VIEW - SINGAPORE,1.276658475936492,103.8498342783428,3,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1629,1386s,routes,0,
+FULL,WALDORF MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WATERFRONT VIEW,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WATERLOO APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WATTEN ESTATE CONDOMINIUM,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WATTEN HOUSE,1.32924471287252,103.8109416570692,1,ChIJZUCWSAga2jERBxjf346lnBQ,Tan Kah Kee,1.3256067,103.8079183,932,770s,routes,1,
+FULL,WATTEN HOUSE,1.32924471287252,103.8109416570692,2,ChIJT1y8pwYa2jER8oi7FaUgAus,Botanic Gardens,1.3223117,103.8149268,1295,1112s,routes,0,
+FULL,WATTEN HOUSE,1.32924471287252,103.8109416570692,3,ChIJfYAWKhAa2jERor0NyvIz_pU,Farrer Road,1.3175983000000002,103.8074697,1823,1528s,routes,0,
+FULL,WATTEN RISE APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WEDGEWOOD MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WELKIN MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WEN YUAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WESTERN GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WESTVALE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WESTWOOD APARTMENTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WHITFIELD GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WHITLEY HEIGHTS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WILKIE LODGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WINFIELD MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WOODLEIGH GROVE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WOODSVILLE COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,WU DE BUILDING,1.314021397041497,103.8579642307075,1,ChIJdeUW8LUZ2jERkHgM-FIPzc0,Lavender,1.3072636,103.86292019999999,1280,1099s,routes,1,
+FULL,WU DE BUILDING,1.314021397041497,103.8579642307075,2,ChIJuz41c7AZ2jERgl25Ot0ZuJw,Bugis,1.3001700999999999,103.85612479999999,2026,1718s,routes,0,
+FULL,WU DE BUILDING,1.314021397041497,103.8579642307075,3,ChIJGbzEZ70Z2jERHl4jQI1-c0Q,Dhoby Ghaut,1.2989467,103.8454924,2539,2122s,routes,0,
+FULL,XIU LAN COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YANG'S GARDEN VILLAGE,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YARDLEY COURT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YI LI APARTMENT,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YI MEI GARDENS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YING MANSIONS,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,YUEN SING MANSION,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ZHEN JI GARDEN,,,1,,,,,,,routes,1,missing_lat_lng_or_project_name
+FULL,ZYON GRAND,1.290572223189504,103.8336630723267,1,ChIJfaoDoHQZ2jERLr4T5bcHKgM,Chinatown,1.2845199999999999,103.84357,1743,1533s,routes,1,
+FULL,ZYON GRAND,1.290572223189504,103.8336630723267,2,ChIJl_5f7Y0Z2jERHoVZ2LLJFOg,Orchard,1.3036699999999999,103.83179,1749,1484s,routes,0,
+FULL,ZYON GRAND,1.290572223189504,103.8336630723267,3,ChIJG9eysQ4Z2jERjKyYBmUQEXM,Raffles Place,1.2849936,103.85172299999999,2342,2019s,routes,0,

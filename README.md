@@ -2,7 +2,7 @@
 
 Python workflow for full-district Singapore private residential rental and sales forecasting. The pipeline prepares transactions, imputes missing monthly prices with a VAE, builds explanatory features, and fits LightGBM forecasts at 1, 12 and 24 months.
 
-This repository contains Python source, tests, runtime configuration and this guide. Input data, generated outputs, trained models and local validation reports are not included. Obtain the required data separately before running the pipeline.
+This repository contains Python source, tests, runtime configuration, 26 complete small reference files, and five-row previews of 13 larger datasets. The full large files remain on OneDrive. Generated outputs, trained models and local validation reports are not included. See [the data guide](data/README.md) for the included files and full-data setup.
 
 ## Environment setup
 
@@ -67,7 +67,9 @@ The numbered files are command-line entry points. Their implementations live in 
 
 ## Prepare the local data
 
-By default, place the separately supplied data under `data/` in the repository root:
+The small reference inputs are included under `data/`. Obtain the complete large files from the existing OneDrive project and restore them to their normal paths before running the relevant stages. Each large file has a five-row preview under `data/snapshots/`; these previews are for inspection only and are not pipeline inputs. See [the full-data setup](data/README.md#full-data-location).
+
+The runtime data layout is:
 
 ```text
 data/
@@ -86,6 +88,7 @@ data/
     trend_policy/
   imputation/             # Optional existing imputation snapshots
   model_input/            # Optional existing forecasting inputs
+  snapshots/              # Five-row previews only; never used by the pipeline
 ```
 
 Step 1 normally starts from these enriched transaction snapshots:
@@ -106,7 +109,7 @@ The quarterly reference filenames and raw-enrichment reference paths are defined
 
 To use a data directory outside the repository, add `--source-root "/absolute/path/to/data"` to each command. It must point to the directory containing `data_prep/`, `imputation/` and `model_input/`, rather than to `data_prep/` itself. Outputs still go to the repository's `outputs/` unless `--output-root` is also supplied.
 
-For example, a code-only clone can use the data and intermediate results from an existing local installation:
+For example, a clone can use the full OneDrive data and intermediate results from an existing local installation:
 
 ```bash
 python 04_forecast.py --mode static --source-root "/absolute/path/to/PGIM_prediction_code/data" --output-root "/absolute/path/to/PGIM_prediction_code/outputs"
@@ -271,4 +274,4 @@ python -m pytest -q
 python -m ruff check .
 ```
 
-Every pipeline stage prints progress and saves console logs and completion/failure records in `outputs/logs/`. The repository's `.gitignore` excludes data, outputs, validation reports, caches, notebooks, environments and model artifacts from version control.
+Every pipeline stage prints progress and saves console logs and completion/failure records in `outputs/logs/`. The repository's `.gitignore` allows only the reviewed small data references and previews. Full large datasets, outputs, validation reports, caches, notebooks, environments and model artifacts remain excluded from version control.

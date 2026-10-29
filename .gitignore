@@ -1,5 +1,5 @@
-# Local datasets, generated results and historical audit material
-data/
+# Ignore data by default; reviewed small references/previews are allowed below
+/data/**
 outputs/
 validation/
 SOURCE_INVENTORY.csv
@@ -48,3 +48,73 @@ env/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Reviewed data directories and exact files only
+!/data/data_prep/
+!/data/imputation/
+!/data/snapshots/
+!/data/data_prep/consulting/
+!/data/data_prep/labour/
+!/data/data_prep/location/
+!/data/data_prep/macro/
+!/data/data_prep/property/
+!/data/data_prep/supply/
+!/data/data_prep/trend_policy/
+!/data/snapshots/data_prep/
+!/data/snapshots/imputation/
+!/data/snapshots/model_input/
+!/data/data_prep/macro/monthly/
+!/data/data_prep/macro/quarterly/
+!/data/snapshots/data_prep/property/
+!/data/snapshots/data_prep/transactions/
+!/data/snapshots/data_prep/transactions/rental/
+!/data/snapshots/data_prep/transactions/sales/
+!/data/snapshots/data_prep/transactions/rental/cleaned/
+!/data/snapshots/data_prep/transactions/rental/enriched/
+!/data/snapshots/data_prep/transactions/rental/source/
+!/data/snapshots/data_prep/transactions/sales/cleaned/
+!/data/snapshots/data_prep/transactions/sales/enriched/
+!/data/snapshots/data_prep/transactions/sales/source/
+!/data/README.md
+!/data/data_prep/README.md
+!/data/data_prep/consulting/consulting_prediction_manual_data.csv
+!/data/data_prep/labour/median_gross_monthly_income_full_time_employed_residents_total.csv
+!/data/data_prep/labour/rcr_01_total_qtr.csv
+!/data/data_prep/labour/ret_01_total_qtr.csv
+!/data/data_prep/labour/rgr_01_total_qtr.xlsx
+!/data/data_prep/labour/share_nonresident_population_by_pass_types_annual.csv
+!/data/data_prep/location/condo_latlon_onemap.csv
+!/data/data_prep/location/full_period_condo_mrt_candidates_walk.csv
+!/data/data_prep/location/nearby_5km_amenities.csv
+!/data/data_prep/location/sale_missing_project_mrt_candidates_walk.csv
+!/data/data_prep/location/top30_primary_schools.csv
+!/data/data_prep/macro/monthly/sg_macro_monthly.csv
+!/data/data_prep/macro/quarterly/Assessed Non Landed Private Residential Units By Locals or Foreigners.csv
+!/data/data_prep/macro/quarterly/Available and Vacant Non-Landed Residential.csv
+!/data/data_prep/macro/quarterly/Price Index of Non-Landed Residential Properties.csv
+!/data/data_prep/macro/quarterly/Rental Index of Non-Landed Properties.csv
+!/data/data_prep/macro/quarterly/Supply of Non-Landed Private Residential.csv
+!/data/data_prep/macro/quarterly/Uncompleted Non Landed Private Residential Units By Locals or Foreigners.csv
+!/data/data_prep/macro/quarterly/Unit Sold or Unsold.csv
+!/data/data_prep/macro/quarterly/Units Launched or Not Yet Launched.csv
+!/data/data_prep/property/property_details_facilities.csv
+!/data/data_prep/supply/developer_sales.csv
+!/data/data_prep/supply/project_details.csv
+!/data/data_prep/trend_policy/condo_rent_external_features_consolidated.csv
+!/data/data_prep/trend_policy/condo_sales_external_features_consolidated.csv
+!/data/imputation/rental_size_bucket_ranges_full_districts.csv
+!/data/snapshots/README.md
+!/data/snapshots/data_prep/property/URA_enriched_with_99co_v2.csv
+!/data/snapshots/data_prep/transactions/rental/cleaned/URA_merged_full_v3_new_macro_removed_outliers.csv
+!/data/snapshots/data_prep/transactions/rental/enriched/URA_merged_full_v1.csv
+!/data/snapshots/data_prep/transactions/rental/enriched/URA_merged_full_v3_new.csv
+!/data/snapshots/data_prep/transactions/rental/enriched/rental_merged_tenure_1999-2026_enriched_macro.csv
+!/data/snapshots/data_prep/transactions/rental/source/rental_merged_tenure_1999-2026.csv
+!/data/snapshots/data_prep/transactions/sales/cleaned/URA_sale_removed_outliers_2.csv
+!/data/snapshots/data_prep/transactions/sales/enriched/URA_sale_data.csv
+!/data/snapshots/data_prep/transactions/sales/source/raw_realis_transaction.csv
+!/data/snapshots/imputation/URA_renting_imputed_vae_a4_mcra_full_districts.csv
+!/data/snapshots/imputation/URA_sales_imputed_vae_a4_mcra_full_districts.csv
+!/data/snapshots/manifest.json
+!/data/snapshots/model_input/URA_renting_imputed_vae_trend_policies_nearby_prices_full_districts.csv
+!/data/snapshots/model_input/URA_sales_imputed_vae_trend_policies_nearby_prices_full_districts.csv
