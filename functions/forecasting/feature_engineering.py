@@ -495,7 +495,7 @@ BASE_STRUCTURAL = [
     AVG_NEW_SALE_PSF_LAG1Q_COL,
     AVG_RESALE_PSF_LAG1Q_COL,
     *NEW_RESALE_PRICE_FEATURES,
-    # Extended supply/pipeline macros (21) — already lag1q at source
+    # Extended macro/supply/labour candidates, with their respective source lags.
 ] + MACRO_COLS_EXTENDED
 
 
@@ -536,6 +536,9 @@ def make_feature_lists(
         and secondary (observed-only) model variants at each horizon.
         Defaults to LAG1_IMP/LAG1_OBS, LAG12_IMP/LAG12_OBS, LAG24_IMP/LAG24_OBS.
         For a custom target column, use lag_names(your_suffix) to generate these.
+
+    Candidates absent from the panel are reported once before returning. These
+    are availability-based lists; market/horizon-specific exclusions still apply.
 
     Returns
     -------
@@ -622,6 +625,14 @@ def make_feature_lists(
             f"h=1 secondary: core macros only; dropped "
             f"{n_before - len(FEATURES_OBS)} extended cols "
             f"({n_before} → {len(FEATURES_OBS)} features)"
+        )
+
+    candidates = list(dict.fromkeys(struct + L1p + L1s + L12_use + L12s + L24_use + L24s))
+    missing = [name for name in candidates if name not in df.columns]
+    if missing:
+        print(
+            f"[forecast features] WARNING: {len(missing)} unavailable candidates skipped: "
+            + ", ".join(missing)
         )
 
     print(f"FEATURES_A      : {len(FEATURES_A)}  ({len(CAT_A)} categorical)")

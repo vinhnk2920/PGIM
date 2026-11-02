@@ -264,7 +264,7 @@ The command writes the consolidated tables under `data/data_prep/supply/` by def
 
 Forecast preparation now separates national monthly series from project and district supply features. Existing supply values are preserved. A missing project value can use another size series for the same condo name, district and month, then the same project's earlier available observations. District supply uses district and month keys and forward-fills only within that district. Unknown leading supply values stay missing for LightGBM rather than using another entity's value or a training-period median. Conflicting non-null values for the same entity/month raise an error.
 
-This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged. F2 is addressed separately below; F3 (feature-name/specification mismatch) and F4 (size buckets) remain open.
+This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged by F1. F2 and F3 are addressed separately below; F4 (size buckets) remains open.
 
 ### Historical project supply (F2 correction, 2 November 2026)
 
@@ -279,7 +279,25 @@ python 03_build_features.py
 python 04_forecast.py --mode static
 ```
 
-Use `--mode rolling` or `--mode both` for those forecast runs. Existing feature CSVs and trained models are not corrected until regenerated. The fix was validated using all 56 unit/regression tests, the complete supply references and isolated sample panels; full production features and forecasts were not rerun during this correction. F3 and F4 remain open.
+Use `--mode rolling` or `--mode both` for those forecast runs. Existing feature CSVs and trained models are not corrected until regenerated. The F2 fix was validated using all 56 tests then available, the complete supply references and isolated sample panels; full production features and forecasts were not rerun during this correction. F3 is addressed below; F4 remains open.
+
+### Retired unimplemented candidates (F3 resolution, 2 November 2026)
+
+The agreed resolution is to keep the feature set actually used in the existing FullDistricts models. Removed these seven unimplemented names from the default forecasting candidates and the applicable supply-filling groups:
+
+- `project_sold_share_mom_chg_lag1m`
+- `district_units_under_construction_qoq_lag1q`
+- `district_units_not_launched_yet_qoq_lag1q`
+- `district_units_launched_unsold_qoq_lag1q`
+- `district_units_completed_unsold_qoq_lag1q`
+- `labour_churn_index_lag1q`
+- `ep_share_yoy_pct_lag1y`
+
+The retained candidates include `project_sold_share_lag1m`, `district_units_launched_lag1m`, `retrenchment_yoy_pct_lag1q` and `median_income_yoy_pct_lag`. Existing market/horizon rules still apply, including the rental observed-only 24-month core-macro restriction. Generated district supply levels, recruitment/resignation rates and EP/S-Pass shares remain in the data exports for inspection; they are not added to the default model. No level is renamed as a growth or change feature.
+
+Feature-list assembly now prints the names of unavailable candidates before skipping them. Availability filtering remains flexible for different markets and datasets; a printed warning does not imply that every candidate is mandatory. Existing explicit requirements for nearby-price and sales price-context inputs are unchanged.
+
+All 59 tests pass. A before/after check using the real rental/sales input schemas and saved derived feature names confirms identical selected feature lists for all six horizon/arm combinations in each market. This is a schema/selection check, not production retraining. F3 alone does not require rerunning imputation or features. The step 3/4 regeneration required for F2 still applies. F4 remains open.
 
 The tests use synthetic fixtures and do not require the private datasets:
 

@@ -133,17 +133,10 @@ MACRO_COLS_EXTENDED = [
     "uncompleted_non_landed_private_residential_purchased_by_spr_share_lag1q",
     # Supply features v2 (Developer Sales + Project Details)
     "project_sold_share_lag1m",
-    "project_sold_share_mom_chg_lag1m",
     "district_units_launched_lag1m",
-    "district_units_under_construction_qoq_lag1q",
-    "district_units_not_launched_yet_qoq_lag1q",
-    "district_units_launched_unsold_qoq_lag1q",
-    "district_units_completed_unsold_qoq_lag1q",
     # MOM features v2
     "retrenchment_yoy_pct_lag1q",
-    "labour_churn_index_lag1q",
     "median_income_yoy_pct_lag",
-    "ep_share_yoy_pct_lag1y",
     # ── Trend & Policy features (added post quarterly-meeting) ─────────────
     "gt_condo_rental_singapore_ma3",
     "gt_hdb_rent_singapore_ma3",
@@ -170,7 +163,6 @@ MACRO_COLS = MACRO_COLS_CORE + MACRO_COLS_EXTENDED
 # Keep these candidates separate when filling, without changing feature selection.
 PROJECT_SUPPLY_COLS = [
     "project_sold_share_lag1m",
-    "project_sold_share_mom_chg_lag1m",
 ]
 DISTRICT_SUPPLY_COLS = [
     "district_units_launched_lag1m",
@@ -178,10 +170,6 @@ DISTRICT_SUPPLY_COLS = [
     "district_units_not_launched_yet_lag1q",
     "district_units_launched_unsold_lag1q",
     "district_units_completed_unsold_lag1q",
-    "district_units_under_construction_qoq_lag1q",
-    "district_units_not_launched_yet_qoq_lag1q",
-    "district_units_launched_unsold_qoq_lag1q",
-    "district_units_completed_unsold_qoq_lag1q",
 ]
 SCOPED_SUPPLY_COLS = set(PROJECT_SUPPLY_COLS) | set(DISTRICT_SUPPLY_COLS)
 
