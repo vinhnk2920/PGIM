@@ -4,6 +4,51 @@ from functions.common import display
 from functions.features.supply_data import load_supply_table
 
 
+def build_project_sold_shares(dev):
+    """Use only the same project's information through the previous month.
+
+    Return a separate monthly history before the panel join. Do not insert these
+    calendar rows into the source used for district-launch aggregation.
+    Unknown initial history stays missing, even for eventually sold-out projects.
+    """
+    import pandas as pd
+
+    months = pd.to_datetime(dev["date"], errors="raise").dt.to_period("M")
+    if months.isna().any() or dev["condo_name_key"].isna().any():
+        raise ValueError("Project sold-share calculation requires project names and dates")
+    keys = pd.MultiIndex.from_arrays(
+        [dev["condo_name_key"], months], names=["condo_name_key", "date"],
+    )
+    if keys.has_duplicates:
+        raise ValueError("Duplicate project/month in developer-sales history")
+    shares = pd.Series(
+        (dev["cumul_sold"] / dev["total_units"]).to_numpy(), index=keys,
+    )
+    monthly_features = []
+    # Include the month after the last report, when that report can first be
+    # used as lag1m. Later panel gaps can carry this past-only value forward.
+    last_feature_month = months.max() + 1
+    for project, values in shares.groupby(level=0, sort=False, observed=True):
+        values = values.droplevel(0).sort_index()
+        calendar = pd.period_range(values.index.min(), last_feature_month, freq="M")
+        current = values.reindex(calendar).ffill()
+        monthly = pd.DataFrame({
+            "project_sold_share": current,
+            "project_sold_share_lag1m": current.shift(1),
+        })
+        monthly.index = pd.MultiIndex.from_product(
+            [[project], calendar], names=["condo_name_key", "date"],
+        )
+        monthly_features.append(monthly)
+    if monthly_features:
+        result = pd.concat(monthly_features).reset_index()
+        result["date"] = result["date"].dt.to_timestamp()
+        return result
+    return pd.DataFrame(columns=[
+        "condo_name_key", "date", "project_sold_share", "project_sold_share_lag1m",
+    ])
+
+
 def run(settings):
     print("[supply] phase 1")
     import pandas as pd
@@ -98,17 +143,8 @@ def run(settings):
     )
     print("[supply] phase 5")
     dev = dev.sort_values(["condo_name", "date"]).reset_index(drop=True)
-    dev["project_sold_share"] = dev["cumul_sold"] / dev["total_units"]
-    dev["project_sold_share"] = dev.groupby("condo_name")["project_sold_share"].transform(
-        lambda x: x.ffill()
-    )
-    dev["project_sold_share_lag1m"] = dev.groupby("condo_name")["project_sold_share"].shift(1)
-    last_share = dev.groupby("condo_name")["project_sold_share"].last()
-    fully_sold = last_share[last_share >= 1.0].index
-    dev.loc[
-        dev["condo_name"].isin(fully_sold) & dev["project_sold_share_lag1m"].isna(),
-        "project_sold_share_lag1m",
-    ] = 1.0
+    # F2 fix: no historical backfill from eventual sold-out status.
+    project_history = build_project_sold_shares(dev)
     dist_launch = (
         dev.groupby(["district", "date"])["units_launched_month"]
         .sum()
@@ -129,7 +165,7 @@ def run(settings):
     ].shift(1)
     print("Developer Sales features computed ✓")
     print(
-        f"  project_sold_share_lag1m: {dev['project_sold_share_lag1m'].notna().sum():,} non-null rows"
+        f"  project_sold_share_lag1m: {project_history['project_sold_share_lag1m'].notna().sum():,} non-null monthly reference rows"
     )
     print(
         f"  district_units_launched_lag1m: {dist_launch['district_units_launched_lag1m'].notna().sum():,} non-null rows"
@@ -249,10 +285,9 @@ def run(settings):
 
     rental = load_imputed_panel(RENTAL_CSV_PATH, "Rental")
     print("[supply] phase 11")
-    dev_project = dev[["condo_name_key", "date", "project_sold_share_lag1m"]].drop_duplicates(
-        ["condo_name_key", "date"], keep="last"
-    )
-    dev_project["date"] = pd.to_datetime(dev_project["date"]).dt.to_period("M").dt.to_timestamp()
+    dev_project = project_history[[
+        "condo_name_key", "date", "project_sold_share_lag1m",
+    ]].copy()
     dist_launch_merge = dist_launch[["district", "date", "district_units_launched_lag1m"]].copy()
     dist_launch_merge["district"] = pd.to_numeric(dist_launch_merge["district"]).astype(int)
     dist_launch_merge["date"] = (

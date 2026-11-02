@@ -264,7 +264,22 @@ The command writes the consolidated tables under `data/data_prep/supply/` by def
 
 Forecast preparation now separates national monthly series from project and district supply features. Existing supply values are preserved. A missing project value can use another size series for the same condo name, district and month, then the same project's earlier available observations. District supply uses district and month keys and forward-fills only within that district. Unknown leading supply values stay missing for LightGBM rather than using another entity's value or a training-period median. Conflicting non-null values for the same entity/month raise an error.
 
-This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged. Other review findings (F2 future sold-out backfilling, F3 feature-name/specification mismatch and F4 size buckets) remain unresolved by this change.
+This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged. F2 is addressed separately below; F3 (feature-name/specification mismatch) and F4 (size buckets) remain open.
+
+### Historical project supply (F2 correction, 2 November 2026)
+
+Step 3 no longer uses a project's eventual sold-out status to fill missing historical sold shares. The shared `build_project_sold_shares` helper in `functions/features/supply.py` builds a separate monthly history using the normalized project key. For month t, `project_sold_share_lag1m` uses the latest reported share available through month t-1. A missing report can carry an earlier share forward within the same project; it cannot borrow a later observation. Unknown initial history stays missing, including for projects that eventually sell out. The final report first becomes eligible in the following month. This is a one-calendar-month reference lag, not a verified release-date schedule.
+
+The monthly history is shared by rental and sales. Calendar rows are kept separate from the original developer-sales table, preserving district launch totals. Regression tests cover future-data changes, missing calendar months, leading unknowns, project isolation, row-order invariance and both actual supply-stage output paths.
+
+To apply F2 to previously generated forecasting inputs, rerun step 3 for both markets, then rerun the required forecasting mode. Imputation does not need to be rerun:
+
+```bash
+python 03_build_features.py
+python 04_forecast.py --mode static
+```
+
+Use `--mode rolling` or `--mode both` for those forecast runs. Existing feature CSVs and trained models are not corrected until regenerated. The fix was validated using all 56 unit/regression tests, the complete supply references and isolated sample panels; full production features and forecasts were not rerun during this correction. F3 and F4 remain open.
 
 The tests use synthetic fixtures and do not require the private datasets:
 
