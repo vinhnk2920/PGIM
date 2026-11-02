@@ -11,9 +11,9 @@ fill_missing(df, test_cutoff)  : fill NaNs (static features + macros + core macr
 Constants
 ---------
 DROP_MODEL_COLS                   : columns dropped before model fitting (kept in saved CSV)
-MACRO_COLS                        : all 30 macro column names
+MACRO_COLS                        : national and entity-specific candidate names
 MACRO_COLS_CORE                   : nine monthly macro / index indicators (see lag policy below)
-MACRO_COLS_EXTENDED               : twenty-one supply / pipeline indicators (lag1q at source)
+MACRO_COLS_EXTENDED               : extended macro, supply and labour candidates
 CORE_MACRO_EXTRA_PANEL_SHIFT_MONTHS
     Extra **calendar-month** lag applied in ``fill_missing`` **only** to ``MACRO_COLS_CORE``:
     each lease row's ``period`` takes macro values from ``add_months(period, -k)`` (see
@@ -31,8 +31,10 @@ Macro lag policy (plain language)
    after step 7's merge/ffill (``k`` = ``CORE_MACRO_EXTRA_PANEL_SHIFT_MONTHS``). This is
    **not** ``groupby.shift`` over lease rows. It is still a modelling choice, not a literal
    real-world publication timestamp.
-4. ``MACRO_COLS_EXTENDED`` columns are left as merged after forward-fill / medians only;
-   they are already **lag-one-quarter** series at source.
+4. Source-lagged extended features receive no additional calendar shift here.
+   National series fill by month. Project/district supply fills only within its
+   own entity using same-month or earlier available values, preserving known values.
+   Unknown leading supply values remain missing for LightGBM.
 """
 
 from __future__ import annotations
@@ -164,6 +166,25 @@ MACRO_COLS_EXTENDED = [
 
 MACRO_COLS = MACRO_COLS_CORE + MACRO_COLS_EXTENDED
 
+# F1 fix: membership in a candidate list does not make a feature national.
+# Keep these candidates separate when filling, without changing feature selection.
+PROJECT_SUPPLY_COLS = [
+    "project_sold_share_lag1m",
+    "project_sold_share_mom_chg_lag1m",
+]
+DISTRICT_SUPPLY_COLS = [
+    "district_units_launched_lag1m",
+    "district_units_under_construction_lag1q",
+    "district_units_not_launched_yet_lag1q",
+    "district_units_launched_unsold_lag1q",
+    "district_units_completed_unsold_lag1q",
+    "district_units_under_construction_qoq_lag1q",
+    "district_units_not_launched_yet_qoq_lag1q",
+    "district_units_launched_unsold_qoq_lag1q",
+    "district_units_completed_unsold_qoq_lag1q",
+]
+SCOPED_SUPPLY_COLS = set(PROJECT_SUPPLY_COLS) | set(DISTRICT_SUPPLY_COLS)
+
 DISCOUNT_LAG1Q_COL = "new_resale_discount_lag1q"
 
 AVG_NEW_SALE_PSF_LAG1Q_COL = "avg_new_sale_psf_lag1q"
@@ -215,6 +236,47 @@ def load_panel(csv_path: str) -> pd.DataFrame:
 # ── Fill missing values ───────────────────────────────────────────────────────
 
 
+def _fill_monthly_by_entity(
+    df: pd.DataFrame,
+    columns: list[str],
+    entity_keys: list[str],
+) -> None:
+    """Fill only NaNs from the same entity/month or its earlier observations.
+
+    An empty entity_keys list denotes a national monthly series. No merge of
+    the full panel is performed, so its row order and index remain unchanged.
+    """
+    if not columns:
+        return
+    keys = entity_keys + ["date"]
+    missing_keys = set(keys) - set(df.columns)
+    if missing_keys:
+        raise KeyError(f"Supply/macro filling requires keys: {sorted(missing_keys)}")
+
+    valid = df[keys].notna().all(axis=1)
+    if "condo_name" in entity_keys:
+        name = df["condo_name"].astype("string").str.strip().str.upper()
+        valid &= ~name.isin(["", "UNKNOWN"])
+    grouped = df.loc[valid].groupby(keys, sort=False, observed=True)[columns]
+    if entity_keys:
+        conflicts = grouped.nunique(dropna=True).gt(1)
+        bad_columns = conflicts.columns[conflicts.any()].tolist()
+        if bad_columns:
+            raise ValueError(
+                f"Conflicting supply values within {keys}: {bad_columns}. "
+                "Resolve the upstream entity/month mapping before forecasting."
+            )
+    lookup = grouped.first().reset_index().sort_values(keys, kind="stable")
+    if entity_keys:
+        lookup[columns] = lookup.groupby(entity_keys, sort=False, observed=True)[columns].ffill()
+    else:
+        lookup[columns] = lookup[columns].ffill()
+    mapped = df[keys].merge(lookup, on=keys, how="left", sort=False, validate="many_to_one")
+    for column in columns:
+        replacement = mapped[column].set_axis(df.index)
+        df[column] = df[column].fillna(replacement)
+
+
 def _fill_planning_area_lag1q_col(
     df: pd.DataFrame,
     col: str,
@@ -249,9 +311,12 @@ def fill_missing(
     protected_cols: set | None = None,
 ) -> pd.DataFrame:
     """
-    Impute missing values strictly preventing P1 data leakage:
-    - All medians are estimated only using the training split (period < test_cutoff).
-    - The clean training parameters are then applied to fill the entire dataset.
+    Fill static features with train-period statistics and time series by scope.
+
+    Supply values retain their project/district identity. Same-month peers in
+    the same entity and past observations can fill gaps; leading gaps remain
+    unknown. Median fallbacks elsewhere use period < test_cutoff. This helper
+    does not establish point-in-time validity of upstream feature generation.
     """
     if protected_cols is None:
         protected_cols = PROTECTED_COLS
@@ -321,16 +386,14 @@ def fill_missing(
         train_tenure_median = 99.0  # Common default for leasehold properties in SG
     df["tenure_remaining_years"] = df["tenure_remaining_years"].fillna(train_tenure_median)
 
-    # 7. Macro columns: ffill in time order, then train-period median (No-Leakage)
-    macro_cols = [c for c in MACRO_COLS if c in df.columns]
-    macro_by_date = (
-        df.sort_values("date")
-        .groupby("date", as_index=False)[macro_cols]
-        .first()
-        .sort_values("date")
-    )
-    macro_by_date[macro_cols] = macro_by_date[macro_cols].ffill()
-    df = df.drop(columns=macro_cols).merge(macro_by_date, on="date", how="left")
+    # 7. F1 fix: national, project and district series require different keys.
+    # Fill only missing cells; never replace complete cross-sectional values.
+    macro_cols = [c for c in MACRO_COLS if c in df.columns and c not in SCOPED_SUPPLY_COLS]
+    _fill_monthly_by_entity(df, macro_cols, [])
+    project_supply = [c for c in PROJECT_SUPPLY_COLS if c in df.columns]
+    district_supply = [c for c in DISTRICT_SUPPLY_COLS if c in df.columns]
+    _fill_monthly_by_entity(df, project_supply, ["condo_name", "district"])
+    _fill_monthly_by_entity(df, district_supply, ["district"])
 
     train_macro_median = df.loc[train_mask, macro_cols].median()
     train_macro_median = train_macro_median.fillna(0.0)
@@ -383,9 +446,11 @@ def fill_missing(
     for col in (DISCOUNT_LAG1Q_COL, AVG_NEW_SALE_PSF_LAG1Q_COL, AVG_RESALE_PSF_LAG1Q_COL):
         _fill_planning_area_lag1q_col(df, col, train_mask)
 
-    # 12. Blanket median fill for remaining numeric columns (strictly using Train medians)
+    # 12. Preserve unknown supply rather than borrowing from other entities or
+    # later training months. LightGBM handles these NaNs natively.
+    median_protected = protected_cols | SCOPED_SUPPLY_COLS
     for col in df.select_dtypes(include="number").columns:
-        if col not in protected_cols and df[col].isna().sum() > 0:
+        if col not in median_protected and df[col].isna().sum() > 0:
             train_col_median = df_train[col].median() if col in df_train.columns else np.nan
             fallback = 0.0 if pd.isna(train_col_median) else train_col_median
             df[col] = df[col].fillna(fallback)

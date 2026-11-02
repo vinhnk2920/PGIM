@@ -260,6 +260,12 @@ The command writes the consolidated tables under `data/data_prep/supply/` by def
 
 ## Tests and local files
 
+### Supply feature filling (F1 correction, 2 November 2026)
+
+Forecast preparation now separates national monthly series from project and district supply features. Existing supply values are preserved. A missing project value can use another size series for the same condo name, district and month, then the same project's earlier available observations. District supply uses district and month keys and forward-fills only within that district. Unknown leading supply values stay missing for LightGBM rather than using another entity's value or a training-period median. Conflicting non-null values for the same entity/month raise an error.
+
+This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged. Other review findings (F2 future sold-out backfilling, F3 feature-name/specification mismatch and F4 size buckets) remain unresolved by this change.
+
 The tests use synthetic fixtures and do not require the private datasets:
 
 ```bash
