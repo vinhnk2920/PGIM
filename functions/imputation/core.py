@@ -41,35 +41,60 @@ def convert_range_to_number(range_str):
         return np.nan
 
 
+SIZE_BUCKET_CUTS = (650.0, 950.0, 1150.0, 1450.0)
+SIZE_BUCKET_LABELS = tuple(f"SZ{i}" for i in range(1, 6))
+
+
 def make_size_bucket(area_sqft, q=5):
-    s_valid = area_sqft.dropna()
-    out = pd.Series(index=area_sqft.index, dtype="object")
-    if s_valid.nunique() < 2:
-        out[:] = "SZ1"
-        return out
-    q_use = min(q, int(s_valid.nunique()))
-    lab_use = [f"SZ{i + 1}" for i in range(q_use)]
-    try:
-        buckets = pd.qcut(s_valid.rank(method="first"), q=q_use, labels=lab_use, duplicates="drop")
-    except Exception:
-        buckets = pd.cut(
-            s_valid, bins=q_use, labels=lab_use, include_lowest=True, duplicates="drop"
+    """Apply the agreed fixed sqft cuts to both markets, independently of rows.
+
+    Intervals are right-closed: 650 belongs to SZ1, 950 to SZ2, etc.
+    Preserve the legacy SZ1 fallback for missing area; this is not an estimate
+    of its true size. Existing market-specific validity filters still apply.
+    """
+    if q != len(SIZE_BUCKET_LABELS):
+        raise ValueError("The shared fixed size-bucket policy requires five buckets")
+    numeric = pd.to_numeric(area_sqft, errors="coerce")
+    return pd.cut(
+        numeric, bins=[-np.inf, *SIZE_BUCKET_CUTS, np.inf],
+        labels=list(SIZE_BUCKET_LABELS), right=True, include_lowest=True,
+    ).astype(object).fillna("SZ1")
+
+
+def export_bucket_ranges(area_sqft=None, size_bucket=None):
+    """Export cut intervals, not sample extrema, including all five buckets.
+
+    Legacy positional arguments remain accepted but do not define the rules.
+    The outer bounds are open-ended so later data use the same assignment.
+    """
+    edges = [-np.inf, *SIZE_BUCKET_CUTS, np.inf]
+    return pd.DataFrame({
+        "size_bucket": SIZE_BUCKET_LABELS,
+        "lower_bound": edges[:-1], "upper_bound": edges[1:],
+    })
+
+
+def validate_bucket_ranges(ranges):
+    """Reject a reference with different internal cuts before mixing markets.
+
+    Older files may record observed outer extrema rather than infinities. Those
+    extrema do not define the assignment; the four shared cut points must agree.
+    """
+    required = {"size_bucket", "lower_bound", "upper_bound"}
+    valid = required <= set(ranges.columns) and len(ranges) == len(SIZE_BUCKET_LABELS)
+    if valid:
+        lower = pd.to_numeric(ranges["lower_bound"], errors="coerce").to_numpy()
+        upper = pd.to_numeric(ranges["upper_bound"], errors="coerce").to_numpy()
+        valid = (
+            ranges["size_bucket"].tolist() == list(SIZE_BUCKET_LABELS)
+            and np.array_equal(lower[1:], SIZE_BUCKET_CUTS)
+            and np.array_equal(upper[:-1], SIZE_BUCKET_CUTS)
         )
-    out.loc[s_valid.index] = buckets.astype(str)
-    return out.fillna("SZ1")
-
-
-def export_bucket_ranges(area_sqft, size_bucket):
-    tmp = pd.DataFrame({"Area_Cleaned": area_sqft, "size_bucket": size_bucket})
-    tmp = tmp.dropna(subset=["Area_Cleaned", "size_bucket"]).copy()
-    if tmp.empty:
-        return pd.DataFrame(columns=["size_bucket", "lower_bound", "upper_bound"])
-    ranges = tmp.groupby("size_bucket", as_index=False)["Area_Cleaned"].agg(
-        lower_bound="min", upper_bound="max"
-    )
-    ranges["bucket_order"] = ranges["size_bucket"].str.extract("SZ(\\\\d+)").astype(float)
-    ranges = ranges.sort_values("bucket_order").drop(columns="bucket_order").reset_index(drop=True)
-    return ranges
+    if not valid:
+        raise ValueError(
+            "Reference conflicts with the shared fixed size-bucket cuts "
+            "650, 950, 1150, 1450 sqft. Rerun rental imputation with the current code."
+        )
 
 
 def clean_num(series):

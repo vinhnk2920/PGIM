@@ -16,10 +16,12 @@ def run(settings):
         clean_num,
         conformal_calibrate_v6,
         evaluate,
+        export_bucket_ranges,
         infer_vae_a4,
         make_size_bucket,
         train_vae_a4,
         val_rmse_a4,
+        validate_bucket_ranges,
     )
 
     print("[sales imputation] source phase 2")
@@ -167,24 +169,20 @@ def run(settings):
         )
     df_raw["Area_Cleaned"] = clean_num(df_raw["Area (SQFT)"])
     df_raw["Sale_PSF"] = clean_num(df_raw["Unit Price ($ PSF)"])
-    bucket_ranges = pd.read_csv(SIZE_BUCKET_RANGES_CSV)
-    _bins = [-np.inf] + list(bucket_ranges["upper_bound"].iloc[:-1]) + [np.inf]
-    _labels = bucket_ranges["size_bucket"].tolist()
-    df_raw["size_bucket"] = (
-        pd.cut(df_raw["Area_Cleaned"], bins=_bins, labels=_labels, include_lowest=True)
-        .astype(str)
-        .replace("nan", "SZ1")
-    )
+    validate_bucket_ranges(pd.read_csv(SIZE_BUCKET_RANGES_CSV))
+    bucket_ranges = export_bucket_ranges()
+    df_raw["size_bucket"] = make_size_bucket(df_raw["Area_Cleaned"], q=N_SIZE_BUCKETS)
     print(
-        f"Loaded rental bucket-range reference: {SIZE_BUCKET_RANGES_CSV} ({len(bucket_ranges)} buckets)"
+        f"Validated shared bucket-range reference: {SIZE_BUCKET_RANGES_CSV} ({len(bucket_ranges)} buckets)"
     )
+    print("Shared fixed size buckets: <=650, (650,950], (950,1150], (1150,1450], >1450 sqft")
     print(
-        f"\n{'Bucket':<8} {'Rental lower':>13} {'Rental upper':>13}  {'Sales-native lower':>18} {'Sales-native upper':>18}  {'N in bucket':>11}"
+        f"\n{'Bucket':<8} {'Cut lower':>13} {'Cut upper':>13}  {'Observed sales min':>18} {'Observed sales max':>18}  {'N in bucket':>11}"
     )
     print("-" * 85)
-    _s_valid = df_raw["Area_Cleaned"].dropna()
-    _sales_buckets = make_size_bucket(_s_valid, q=N_SIZE_BUCKETS)
-    _sales_tmp = pd.DataFrame({"area": _s_valid, "sz": _sales_buckets})
+    _sales_tmp = df_raw[["Area_Cleaned", "size_bucket"]].rename(
+        columns={"Area_Cleaned": "area", "size_bucket": "sz"},
+    ).dropna(subset=["area"])
     for _, row in bucket_ranges.iterrows():
         sz = row["size_bucket"]
         r_lo = row["lower_bound"]

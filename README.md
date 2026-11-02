@@ -137,7 +137,7 @@ Raw enrichment can be rebuilt explicitly with `python 01_preprocess.py --rebuild
 python 02_impute.py
 ```
 
-Builds project/size/month panels, tunes VAE models, evaluates masked observations, calibrates intervals and exports completed panels. Rental runs first because it creates the size-bucket ranges used by sales.
+Builds project/size/month panels, tunes VAE models, evaluates masked observations, calibrates intervals and exports completed panels. Both markets use the same fixed area thresholds: 650, 950, 1150 and 1450 sqft. Rental runs first to export the shared bucket-rule reference checked by sales; bucket thresholds are not estimated from the current sample. See the F4 correction below before reusing older outputs.
 
 To rerun a single market:
 
@@ -146,7 +146,7 @@ python 02_impute.py --market rental
 python 02_impute.py --market sales
 ```
 
-Sales requires an existing `rental_size_bucket_ranges_full_districts.csv` in `outputs/02_imputation/`. Full tuning uses 162 configurations and up to 300 epochs per configuration, so this stage can take substantial time.
+Sales requires an existing `rental_size_bucket_ranges_full_districts.csv` in `outputs/02_imputation/` (or the supported data fallback with `--reuse-existing`). The five labels and four internal cut points must match the shared fixed rules, otherwise the run fails with an instruction to rerun rental imputation. Full tuning uses 162 configurations and up to 300 epochs per configuration, so this stage can take substantial time.
 
 Each market writes its main CSV in `outputs/02_imputation/` and four artifacts under `rental_artifacts/` or `sales_artifacts/`: a `.pkl` bundle, a `.npz` array archive, `test_metrics.json` and `model_weights.pkl`. These include evaluation metrics and separate evaluation/production model weights and scalers. Successful reruns replace the stable imputation filenames.
 
@@ -264,7 +264,7 @@ The command writes the consolidated tables under `data/data_prep/supply/` by def
 
 Forecast preparation now separates national monthly series from project and district supply features. Existing supply values are preserved. A missing project value can use another size series for the same condo name, district and month, then the same project's earlier available observations. District supply uses district and month keys and forward-fills only within that district. Unknown leading supply values stay missing for LightGBM rather than using another entity's value or a training-period median. Conflicting non-null values for the same entity/month raise an error.
 
-This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged by F1. F2 and F3 are addressed separately below; F4 (size buckets) remains open.
+This correction changes the in-memory forecasting inputs for both rental and sales. It does not rewrite model-input CSVs or previously saved models. Rerun step 4 to use the corrected handling; F1 alone does not require rerunning imputation. The core-macro calendar lag and feature candidate lists are unchanged by F1. F2, F3 and F4 are addressed separately below.
 
 ### Historical project supply (F2 correction, 2 November 2026)
 
@@ -279,7 +279,7 @@ python 03_build_features.py
 python 04_forecast.py --mode static
 ```
 
-Use `--mode rolling` or `--mode both` for those forecast runs. Existing feature CSVs and trained models are not corrected until regenerated. The F2 fix was validated using all 56 tests then available, the complete supply references and isolated sample panels; full production features and forecasts were not rerun during this correction. F3 is addressed below; F4 remains open.
+Use `--mode rolling` or `--mode both` for those forecast runs. Existing feature CSVs and trained models are not corrected until regenerated. The F2 fix was validated using all 56 tests then available, the complete supply references and isolated sample panels; full production features and forecasts were not rerun during this correction. F3 and F4 are addressed below. Applying F4 as well requires the longer rerun sequence described there.
 
 ### Retired unimplemented candidates (F3 resolution, 2 November 2026)
 
@@ -297,7 +297,37 @@ The retained candidates include `project_sold_share_lag1m`, `district_units_laun
 
 Feature-list assembly now prints the names of unavailable candidates before skipping them. Availability filtering remains flexible for different markets and datasets; a printed warning does not imply that every candidate is mandatory. Existing explicit requirements for nearby-price and sales price-context inputs are unchanged.
 
-All 59 tests pass. A before/after check using the real rental/sales input schemas and saved derived feature names confirms identical selected feature lists for all six horizon/arm combinations in each market. This is a schema/selection check, not production retraining. F3 alone does not require rerunning imputation or features. The step 3/4 regeneration required for F2 still applies. F4 remains open.
+The F3 correction passed all 59 tests then available. A before/after check using the real rental/sales input schemas and saved derived feature names confirms identical selected feature lists for all six horizon/arm combinations in each market. This is a schema/selection check, not production retraining. F3 alone does not require rerunning imputation or features. F4 below requires regenerating imputation and downstream outputs.
+
+### Shared fixed area buckets (F4 correction, 2 November 2026)
+
+Rental and sales now call the same `make_size_bucket` function in `functions/imputation/core.py`. The cut points are the existing project thresholds, explicitly frozen by agreement rather than re-estimated using quantiles or row ranks:
+
+| Bucket | Floor area in sqft |
+|---|---|
+| SZ1 | At most 650 |
+| SZ2 | Greater than 650, at most 950 |
+| SZ3 | Greater than 950, at most 1150 |
+| SZ4 | Greater than 1150, at most 1450 |
+| SZ5 | Greater than 1450 |
+
+All boundaries are right-closed, so every 650-sqft transaction belongs to SZ1 in both markets. Equal areas always get equal labels, including after row reordering or when only a subset of sizes is present. Bucket counts do not have to be equal. These are frozen modelling rules; retaining historically observed cut points is not a claim that they were selected on an independent pre-2020 sample.
+
+The exported `rental_size_bucket_ranges_full_districts.csv` now records the cut intervals for all five buckets, including empty ones. Its first lower bound is `-inf` and final upper bound is `inf`, allowing the same rules to cover new observed extremes. These bounds replace the old sample minimum/maximum summaries. Compatible older references with the same four internal cuts are accepted; conflicting cut points are rejected. The existing missing-area fallback to SZ1 is retained for compatibility and does not mean that the unknown floor area was measured as small. Market-specific transaction validity filters are unchanged.
+
+All 68 tests pass, including exact boundary cases, row-order invariance, sample-distribution independence, exported-rule replay and small actual rental/sales imputation runs with observed monthly-target checks and artifact exports. Full production VAE training and forecasting were not rerun during this correction. Existing data snapshots, imputation artifacts and forecast results have not been overwritten.
+
+A read-only audit at the bucket-assignment step checked all 1,260,795 prepared rental transactions and 508,082 prepared sales transactions. Rental has 145,756 changed assignments (11.56%), all at the four shared boundary values. Sales has zero changed assignments because its previous rule already used these cuts. Reversing the complete input order and replaying the exported cut rules reproduces the new assignments exactly in both markets. These are transaction-assignment counts, not counts of changed forecast rows or measured changes in prediction accuracy.
+
+Changing bucket membership changes project-size series and monthly targets. To apply F4, regenerate **both markets** in this order; preprocessing does not need to be rerun:
+
+```bash
+python 02_impute.py
+python 03_build_features.py
+python 04_forecast.py --mode static
+```
+
+Use `--mode rolling` or `--mode both` for the required forecast run. Do not combine an older rental panel with a newly generated sales panel, or treat old `--reuse-existing` snapshots as outputs of this correction. F1-F4 have code/configuration resolutions; their effects on full-data predictive accuracy still require the regenerated experiments.
 
 The tests use synthetic fixtures and do not require the private datasets:
 

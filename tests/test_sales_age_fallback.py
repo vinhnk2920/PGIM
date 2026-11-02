@@ -18,9 +18,9 @@ def test_sales_orchestration_preserves_and_fills_canonical_age(tmp_path, monkeyp
                         imputation_max_configs=1, imputation_max_epochs=1, mc_draws=2)
     settings.folder("01_preprocessing")
     settings.folder("02_imputation")
-    pd.DataFrame({"size_bucket": [f"SZ{i}" for i in range(1, 6)],
-                  "lower_bound": [500, 900, 1300, 1700, 2100],
-                  "upper_bound": [700, 1100, 1500, 1900, 2300]}).to_csv(settings.bucket_ranges(), index=False)
+    from functions.imputation.core import export_bucket_ranges
+
+    export_bucket_ranges().to_csv(settings.bucket_ranges(), index=False)
     records = []
     for district in sorted(set(range(1, 29)) - {24}):
         for month in pd.date_range("2018-01-01", periods=24, freq="MS"):
@@ -28,7 +28,7 @@ def test_sales_orchestration_preserves_and_fills_canonical_age(tmp_path, monkeyp
                 if district == 27 and bucket == 0 and month == pd.Timestamp("2018-03-01"):
                     continue
                 record = {"Project Name": f"CONDO {district}", "Postal District": district,
-                          "Property Type": "Condominium", "Area (SQFT)": str(600 + 400 * bucket),
+                          "Property Type": "Condominium", "Area (SQFT)": str((500, 800, 1000, 1300, 1700)[bucket]),
                           "Unit Price ($ PSF)": 1000 + district * 10 + bucket + month.month,
                           "Transacted Price ($)": 1_000_000, "Sale Date": month.strftime("%Y-%m-%d"),
                           "Condo_Age_2026": np.nan if district in (1, 2, 3) else 15}

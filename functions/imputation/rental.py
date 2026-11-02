@@ -147,9 +147,10 @@ def run(settings):
     df_raw["Area_Cleaned"] = df_raw["Floor Area (SQFT)"].apply(convert_range_to_number)
     df_raw["Rent_PSF"] = df_raw["Monthly Rent ($)"] / df_raw["Area_Cleaned"]
     df_raw["size_bucket"] = make_size_bucket(df_raw["Area_Cleaned"], q=N_SIZE_BUCKETS)
-    bucket_ranges = export_bucket_ranges(df_raw["Area_Cleaned"], df_raw["size_bucket"])
+    bucket_ranges = export_bucket_ranges()
     bucket_ranges.to_csv(SIZE_BUCKET_RANGES_CSV, index=False)
     print(f"Saved size bucket ranges: {SIZE_BUCKET_RANGES_CSV} ({len(bucket_ranges)} buckets)")
+    print("Shared fixed size buckets: <=650, (650,950], (950,1150], (1150,1450], >1450 sqft")
     df_raw["Date_DT"] = pd.to_datetime(df_raw["Lease Commencement Date"], errors="coerce")
     df_raw["YearMonth"] = df_raw["Date_DT"].dt.to_period("M").astype(str)
     df_raw["ProjectSeries"] = (
