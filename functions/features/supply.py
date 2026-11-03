@@ -2,6 +2,7 @@
 
 from functions.common import display
 from functions.features.supply_data import load_supply_table
+from functions.preprocessing.monthly import fill_rental_monthly_macro_gaps
 
 
 def build_project_sold_shares(dev):
@@ -271,6 +272,11 @@ def run(settings):
         if missing:
             raise KeyError(f"{label} input missing columns: {sorted(missing)}")
         panel["date"] = pd.to_datetime(panel["date"], errors="raise")
+        if label == "Rental":
+            panel = fill_rental_monthly_macro_gaps(
+                panel, "date", settings.prep_path("macro", "monthly", "sg_macro_monthly.csv"),
+                copy=False,
+            )
         panel["district"] = pd.to_numeric(panel["district"], errors="raise").astype(int)
         panel["condo_name_key"] = panel["condo_name"].map(normalize_condo_name).astype("string")
         actual_districts = set(panel["district"].unique())

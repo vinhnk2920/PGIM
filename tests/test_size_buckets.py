@@ -85,6 +85,11 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
     settings.folder("01_preprocessing")
     settings.folder("02_imputation")
     export_bucket_ranges().to_csv(settings.bucket_ranges(), index=False)
+    macro_path = settings.prep_path("macro", "monthly", "sg_macro_monthly.csv")
+    macro_path.parent.mkdir(parents=True)
+    reference_dates = pd.date_range("2017-12-01", periods=24, freq="MS")
+    pd.DataFrame({"month": reference_dates,
+                  "cpi_all_items_infl_yoy_pct": reference_dates.month}).to_csv(macro_path, index=False)
     # Tie two observations at 650; cover every exact cut and the open upper bin.
     cases = [(650, "SZ1", 0), (650, "SZ1", 1), (950, "SZ2", 2),
              (1150, "SZ3", 3), (1450, "SZ4", 4), (1451, "SZ5", 5)]
@@ -98,7 +103,8 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
                        if market == "rental" else 1000 + offset * 10 + district + date.month)
                 row = {"Project Name": f"CONDO {district}", "Postal District": district,
                        "Property Type": "Non-landed Properties" if market == "rental" else "Condominium",
-                       "Condo_Age_2026": 15}
+                       "Condo_Age_2026": 15,
+                       "cpi_all_items_infl_yoy_pct": np.nan if date.month == 9 else (date - pd.offsets.MonthBegin()).month}
                 if market == "rental":
                     row.update({"Floor Area (SQFT)": f"{area} to {area}",
                                 "Monthly Rent ($)": psf * area,
@@ -121,6 +127,11 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
     np.testing.assert_allclose(observed[f"{prefix}_psf_obs"].sort_index(), expected, rtol=1e-6)
     np.testing.assert_array_equal(observed[f"{prefix}_psf_imp"], observed[f"{prefix}_psf_obs"])
     assert output[f"{prefix}_psf_imp"].notna().all()
+    september = output.date.dt.month.eq(9)
+    if market == "rental":
+        assert output.loc[september, "cpi_all_items_infl_yoy_pct"].eq(8.).all()
+    else:
+        assert output.loc[september, "cpi_all_items_infl_yoy_pct"].isna().all()
     for key in ("bundle", "arrays", "metrics", "weights"):
         assert artifact_paths(settings, market)[key].is_file()
     pd.testing.assert_frame_equal(pd.read_csv(settings.bucket_ranges()), export_bucket_ranges())

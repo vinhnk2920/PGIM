@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 
 from functions.preprocessing.quarterly import add_quarterly_macros
+from functions.preprocessing.monthly import fill_rental_monthly_macro_gaps
 
 ASSESSED_FEATURES = [
     "assessed_non_landed_private_residential_owned_by_companies_share_lag1q",
@@ -143,6 +144,11 @@ def run(settings, markets=("rental", "sales"), rebuild_raw=False):
         df = pd.read_csv(source, low_memory=False)
         print(f"[preprocessing 2/3] {market}: merge quarterly macro features")
         date = "Lease Commencement Date" if market == "rental" else "Sale Date"
+        if market == "rental":
+            df = fill_rental_monthly_macro_gaps(
+                df, date, settings.prep_path("macro", "monthly", "sg_macro_monthly.csv"),
+                copy=False,
+            )
         fallback = assessed_reference(settings, df[date])
         df = add_quarterly_macros(
             df,

@@ -103,7 +103,11 @@ def test_actual_supply_stage_preserves_unknown_lags_for_both_markets(tmp_path, m
     inputs = {}
     for market in ("rental", "sales"):
         inputs[market] = tmp_path / f"{market}_imputed.csv"
-        panel.to_csv(inputs[market], index=False)
+        panel.assign(cpi_all_items_infl_yoy_pct=float("nan")).to_csv(inputs[market], index=False)
+    macro_path = tmp_path / "macro" / "monthly" / "sg_macro_monthly.csv"
+    macro_path.parent.mkdir(parents=True)
+    pd.DataFrame({"month": ["2019-12-01", "2020-01-01", "2020-02-01", "2020-03-01"],
+                  "cpi_all_items_infl_yoy_pct": [1., 2., 3., 4.]}).to_csv(macro_path, index=False)
 
     developer = pd.DataFrame([
         {"Project Name": f"PROJECT {district}", "district": district,
@@ -139,12 +143,16 @@ def test_actual_supply_stage_preserves_unknown_lags_for_both_markets(tmp_path, m
         folder.mkdir(exist_ok=True)
         return folder
 
-    settings = SimpleNamespace(prep_path=lambda name: tmp_path / name,
+    settings = SimpleNamespace(prep_path=lambda *parts: tmp_path.joinpath(*parts),
                                folder=output_folder, read_imputed=inputs.__getitem__)
     supply.run(settings)
     for market in ("rental", "sales"):
         result = pd.read_csv(tmp_path / "03_features" / f"{market}_supply.csv")
         pd.testing.assert_frame_equal(result[panel.columns], panel)
+        if market == "rental":
+            assert result["cpi_all_items_infl_yoy_pct"].tolist() == [1., 2., 3., 4.] * len(districts)
+        else:
+            assert result["cpi_all_items_infl_yoy_pct"].isna().all()
         january = result["date"].eq("2020-01-01")
         assert result.loc[january, "project_sold_share_lag1m"].isna().all()
         assert result.loc[~january, "project_sold_share_lag1m"].eq(0.2).all()

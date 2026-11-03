@@ -329,6 +329,23 @@ python 04_forecast.py --mode static
 
 Use `--mode rolling` or `--mode both` for the required forecast run. Do not combine an older rental panel with a newly generated sales panel, or treat old `--reuse-existing` snapshots as outputs of this correction. F1-F4 have code/configuration resolutions; their effects on full-data predictive accuracy still require the regenerated experiments.
 
+### Rental September monthly macro gaps (R1 correction, 3 November 2026)
+
+Some rental snapshots have missing monthly macro values every September even though the corresponding reference values exist. The shared `fill_rental_monthly_macro_gaps` helper in `functions/preprocessing/monthly.py` fills only missing cells in the nine existing core monthly macro columns, using exact month keys from `data/data_prep/macro/monthly/sg_macro_monthly.csv`. It preserves every existing non-null value and leaves a cell missing if its exact reference month is unavailable. It does not interpolate or borrow a later month's value.
+
+The repair retains the existing rental snapshot offset: transaction/panel month t uses reference month t-1, so a missing September value uses August's reference. Forecast preparation still applies its additional three-month calendar shift. Sales handling is unchanged. These are the retained reference-month conventions, not a verified publication-date schedule.
+
+Preprocessing, rental imputation input loading and the first feature-building phase all call this shared helper. Monthly macros are exported metadata rather than VAE price-training inputs. Previously completed VAE results can therefore be reused: step 3 repairs the metadata when reading the existing rental imputed CSV, without retraining the VAE or rewriting its saved prices/weights. Run:
+
+```bash
+python 03_build_features.py
+python 04_forecast.py --mode static
+```
+
+Use the required forecasting mode after step 3 completes. Existing step-2 CSVs and bundles are not rewritten by installing this fix or running step 3; future step-2 runs will also export the repaired metadata. A forecast process that has already loaded its inputs continues using those inputs and must be rerun to use regenerated features.
+
+Validation passes all 76 tests, including both actual small imputation orchestrations, preprocessing and both supply-stage output paths, plus future-reference isolation and unchanged observed prices. A read-only check of all 315 saved rental monthly metadata rows fills 218 unique monthly-series cells across 26 September months (2000-2025), preserves all known values and other columns, and leaves zero gaps where the exact reference value exists. After the unchanged forecast shift, the six affected post-2020 December values in each of CPI, SORA, bond yield and FX match the expected reference. These are monthly-series checks, not counts of transaction rows or a new accuracy evaluation. Production forecasts were not rerun during this correction. Other findings in the 3 November review remain separate.
+
 The tests use synthetic fixtures and do not require the private datasets:
 
 ```bash

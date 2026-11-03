@@ -2,6 +2,7 @@
 
 
 def run(settings):
+    from functions.preprocessing.monthly import fill_rental_monthly_macro_gaps
     from functions.imputation.artifacts import artifact_paths, run_timestamp, save_artifacts
     from functions.imputation.schema import (
         AMENITY_TYPES,
@@ -132,6 +133,10 @@ def run(settings):
     print("[rental imputation] source phase 5")
     print(f"Loading from {DATA_PATH} ...")
     df_raw = pd.read_csv(DATA_PATH, usecols=load_cols)
+    df_raw = fill_rental_monthly_macro_gaps(
+        df_raw, "Lease Commencement Date",
+        settings.prep_path("macro", "monthly", "sg_macro_monthly.csv"), copy=False,
+    )
     df_raw = df_raw[df_raw["Property Type"] == "Non-landed Properties"].copy()
     df_raw["Postal District"] = pd.to_numeric(df_raw["Postal District"], errors="coerce").astype(
         "Int64"
