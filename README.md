@@ -6,6 +6,12 @@ This repository contains Python source, tests, runtime configuration, 26 complet
 
 ## Environment setup
 
+To rebuild the reported experiment from the complete local raw inputs, use
+`python 05_reproduce_from_raw.py` in the `PGIM_torch` environment. This trains
+fresh VAE and LightGBM models with the recorded scalar configuration and writes
+a new output folder for every run. See [the from-raw experiment guide](config/experiments/README.md)
+for input lineage, auditing and the historical methodology kept for replication.
+
 Use Python 3.10 or newer. From Anaconda Prompt, create an environment and install the dependencies:
 
 ```bash
@@ -45,6 +51,7 @@ PGIM/
   02_impute.py
   03_build_features.py
   04_forecast.py
+  05_reproduce_from_raw.py
   run_pipeline.py
   consolidate_supply.py
   functions/
@@ -118,6 +125,12 @@ python run_pipeline.py --stage preflight --reuse-existing
 Preflight reports dependencies, reference-file presence and panel headers. It does not train models, and a missing optional checkpoint can be expected before the relevant stage has run. Inspect the report for the stage you intend to run; it is not a full data-quality certification.
 
 ## Run the pipeline
+
+For comparison with the reported August benchmark, run `python 05_reproduce_from_raw.py`.
+It checks the required raw sources, rebuilds both markets and trains fresh models
+with the reported scalar settings in a separate output folder. The individual
+commands below use the corrected default methodology and fresh tuning; they are
+a different experiment and need not reproduce the historical benchmark.
 
 Run commands from the repository root with the environment activated.
 
@@ -209,6 +222,15 @@ Both arms are scored on the same rows with observed origin and future target pri
 
 ### Run all stages in order
 
+Reported-method replication from raw inputs:
+
+```bash
+python 05_reproduce_from_raw.py
+```
+
+Corrected methodology with new tuning (starts at enriched transactions unless
+`--rebuild-raw` is added):
+
 ```bash
 python run_pipeline.py --stage all --mode both
 ```
@@ -249,13 +271,56 @@ python consolidate_supply.py --developer-sales-dir "/path/to/developer_sales_dow
 
 The command writes the consolidated tables under `data/data_prep/supply/` by default and records checksums under `validation/supply/`. It preserves source order and provenance; original download files are not copied into this repository.
 
+## Reproduce the reported August 2026 results
+
+Use this path when the objective is numerical agreement with the reported table,
+rather than a new experiment on updated upstream inputs:
+
+```bash
+python 04_forecast.py --market sales --reference-profile config/reference_profiles/reported_aug2026.json
+python 04_forecast.py --market rental --reference-profile config/reference_profiles/reported_aug2026.json
+```
+
+The default reference mode is `refit`: it trains fresh imputed-arm models on the
+archived engineered feature panel, retaining the saved feature order, categorical
+levels, selected hyperparameters, seed, target definition, training dates and W1
+target weights. It does not rerun Optuna or the updated VAE/feature construction.
+The reference profile points to the original sibling `rolling_window_models`
+folders; those files are read-only. New model bundles, predictions, all four
+metrics, per-metric differences and SHA-256 input fingerprints are written to a
+new `outputs/04_forecasts/reference_...` folder.
+
+For a quick inference-only check, add `--reference-mode predict`. That mode is
+labelled separately and does not claim a fresh training run. Both modes require
+the original observed origin/target test keys and raise if a metric falls outside
+the declared tolerance (0.1% relative for RMSE/MAE/MAPE, 0.0001 absolute for R2).
+The profile checks the archived imputed arms; it does not present the saved
+observed-only baseline predictions as freshly refitted baseline models.
+
+The default retains the archived CPU thread count. For the deterministic saved
+models, `--reference-threads 4` can speed up fresh refits; the override is recorded
+and the same numerical agreement checks still apply.
+
+To reproduce just the sales 12-month model:
+
+```bash
+python 04_forecast.py --market sales --horizons 12 --reference-profile config/reference_profiles/reported_aug2026.json
+```
+
+The standard forecasting default is now W1, matching the reported experiment.
+Use `--imputed-target-weight 0` explicitly for a separate W0 experiment. W1
+weights both observed and filled target prices equally; W0 weights only observed
+targets while still allowing completed histories to supply predictor features.
+Matching historical results is not a new out-of-time validation: the inherited
+full-history imputation/scaling assumptions still apply.
+
 ## Modelling assumptions and interpretation
 
 - Coverage is districts 1-28 except district 24: 27 districts with available observations.
 - Rental models predict price levels. Sales models predict log growth, reconstruct price levels and tune against observed price-level RMSE.
-- The default imputed-target training weight is zero; observed targets have weight one. Completed input histories can still affect model features and training-row eligibility.
+- The default imputed-target training weight is one, preserving the reported W1 experiment. Observed targets also have weight one. W0 must be requested explicitly with `--imputed-target-weight 0`.
 - The comparison retains the original arm-specific feature choices: rental h=12/h=24 use observed lag families, rental h=24 restricts the observed arm's macros, and sales adds price-context features to the imputed arm. It is therefore not a controlled experiment that changes only one imputation switch.
-- All features are used by default. `--selected-features` applies archived drop lists from `config/selected_features/`; these are not reselected inside each rolling window. `--imputed-target-weight 1` changes the target-weight setting used by the historical `selected_w1` experiments.
+- All features are used by default. `--selected-features` applies archived drop lists from `config/selected_features/`; these are not reselected inside each rolling window. A reference-profile run instead preserves the feature list stored with the historical model.
 - The inherited VAE/scaler and outlier rules use the full historical panel. Rolling forecasting refits LightGBM, without refitting VAE imputation, static metadata or feature selection at every historical origin. Interpret these results as conditional on full-panel preprocessing rather than as a fully point-in-time backtest.
 
 ## Tests and local files

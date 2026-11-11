@@ -145,7 +145,18 @@ def run(settings):
     print("[supply] phase 5")
     dev = dev.sort_values(["condo_name", "date"]).reset_index(drop=True)
     # F2 fix: no historical backfill from eventual sold-out status.
-    project_history = build_project_sold_shares(dev)
+    from functions.experiment import reported
+    if reported(settings):
+        # Historical rule retained only in explicit reproduction methodology.
+        dev["project_sold_share"] = dev["cumul_sold"] / dev["total_units"]
+        dev["project_sold_share"] = dev.groupby("condo_name")["project_sold_share"].transform(lambda x: x.ffill())
+        dev["project_sold_share_lag1m"] = dev.groupby("condo_name")["project_sold_share"].shift(1)
+        last_share = dev.groupby("condo_name")["project_sold_share"].last()
+        fully_sold = last_share[last_share >= 1.0].index
+        dev.loc[dev["condo_name"].isin(fully_sold) & dev["project_sold_share_lag1m"].isna(), "project_sold_share_lag1m"] = 1.0
+        project_history = dev[["condo_name_key", "date", "project_sold_share_lag1m"]].drop_duplicates(["condo_name_key", "date"], keep="last")
+    else:
+        project_history = build_project_sold_shares(dev)
     dist_launch = (
         dev.groupby(["district", "date"])["units_launched_month"]
         .sum()
@@ -272,7 +283,8 @@ def run(settings):
         if missing:
             raise KeyError(f"{label} input missing columns: {sorted(missing)}")
         panel["date"] = pd.to_datetime(panel["date"], errors="raise")
-        if label == "Rental":
+        from functions.experiment import reported
+        if label == "Rental" and not reported(settings):
             panel = fill_rental_monthly_macro_gaps(
                 panel, "date", settings.prep_path("macro", "monthly", "sg_macro_monthly.csv"),
                 copy=False,

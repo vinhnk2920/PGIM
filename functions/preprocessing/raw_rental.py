@@ -21,7 +21,11 @@ def run(settings):
     print("[raw preprocessing] source phase 1")
     import pandas as pd
 
-    df_check = pd.read_csv(paths.file("URA_merged_full_v1.csv"), nrows=0)
+    from functions.experiment import reported, profile
+    if reported(settings):
+        df_check = pd.DataFrame(columns=profile(settings)["raw_rental_column_order"])
+    else:
+        df_check = pd.read_csv(paths.file("URA_merged_full_v1.csv"), nrows=0)
     print("[raw preprocessing] source phase 2")
     import pandas as pd
     import numpy as np
@@ -41,7 +45,8 @@ def run(settings):
     print(f"  Ready: {len(raw_df):,} rows (before filtering)")
     print("[raw preprocessing] source phase 4")
     print("[STEP 2] Adding 99.co condo enrichments...")
-    df_99co = pd.read_csv(paths.file("URA_enriched_with_99co_v2.csv"), low_memory=False)
+    from functions.preprocessing.reference_lookup import rental_property_reference
+    df_99co = rental_property_reference(paths.file("URA_enriched_with_99co_v2.csv"), raw_df.columns)
     df_99co["Project Name"] = df_99co["Project Name"].astype(str).str.strip().str.upper()
     raw_df["Project Name"] = raw_df["Project Name"].astype(str).str.strip().str.upper()
     if "Lease Commencement Date" in df_99co.columns:
@@ -70,6 +75,9 @@ def run(settings):
     )
     print(f"  Rows after 99.co merge: {len(raw_df):,}")
     print(f"  Columns after 99.co merge: {len(raw_df.columns):,}")
+    del df_99co
+    import gc
+    gc.collect()
     print("[raw preprocessing] source phase 5")
     print("\n[STEP 3] Mapping addresses & coordinates...")
     lookup_df = pd.read_csv(paths.file("condo_latlon_onemap.csv"))
@@ -88,6 +96,8 @@ def run(settings):
     df_with_addr = df_with_addr.dropna(subset=["latitude"])
     print(f"\n  Missing coordinates: {missing_count:,} rows (removed)")
     print(f"  Rows after address merge: {len(df_with_addr):,}")
+    del raw_df
+    gc.collect()
     print("[raw preprocessing] source phase 6")
     print("\n[STEP 4] Calculating school distances (5km radius)...")
 
@@ -152,6 +162,8 @@ def run(settings):
         )
     print(f"  MRT columns added: {len(mrt_pivot.columns) - 1}")
     print(f"  Rows: {len(df_with_schools_mrt):,}")
+    del df_with_addr
+    gc.collect()
     print("[raw preprocessing] source phase 8")
     print("\n[STEP 6] Adding project-level macro data...")
     macro_df = pd.read_csv(paths.file("rental_merged_tenure_1999-2026_enriched_macro.csv"))
@@ -176,6 +188,8 @@ def run(settings):
     )
     print(f"  Macro columns added: {len(macro_filtered.columns) - 1}")
     print(f"  Rows: {len(df_with_project_macro):,}")
+    del df_with_schools_mrt
+    gc.collect()
     macro_cols = [col for col in macro_filtered.columns if col != "Project Name"]
     missing_macro = df_with_project_macro[macro_cols].isnull().sum().sort_values(ascending=False)
     print("\n  Missing values in project-level macro columns:")
@@ -261,6 +275,8 @@ def run(settings):
             print(f"  WARNING: monthly macro column missing after merge: {col}")
     print(f"  Monthly macro columns added: {len(monthly_macro_columns)}")
     print(f"  Rows: {len(df_with_all_macro):,}")
+    del df_with_project_macro
+    gc.collect()
     print("\n  Missing values in monthly macro columns:")
     monthly_macro_missing = (
         df_with_all_macro[monthly_macro_columns].isnull().sum().sort_values(ascending=False)
@@ -295,6 +311,8 @@ def run(settings):
     rows_without_amenities = df_final[amenity_cols].isnull().all(axis=1).sum()
     print(f"  Amenity columns added: {len(amenities_filtered.columns) - 1}")
     print(f"  Rows: {len(df_final):,}")
+    del df_with_all_macro
+    gc.collect()
     print("\n  Missing values in amenity columns:")
     print(missing_amenities[missing_amenities > 0])
     print(f"\n  Rows with no amenity values at all: {rows_without_amenities:,}")

@@ -23,17 +23,33 @@ class Settings:
     validation_months: int = 12
     rolling_train_months: int = 180
     rolling_test_months: int = 12
-    imputed_target_weight: float = 0.0
+    # Preserve the reported W1 experiment; W0 is an explicit separate experiment.
+    imputed_target_weight: float = 1.0
     selected_features: bool = False
     seed: int = 42
     imputation_max_configs: int | None = None
     imputation_max_epochs: int = 300
     mc_draws: int = 20
     reuse_existing: bool = False
+    reference_profile: Path | None = None
+    reference_mode: str = "refit"
+    reference_threads: int | None = None
+    experiment_profile: Path | None = None
+    top_first: bool = False
 
     def __post_init__(self):
         self.source_root = Path(self.source_root).resolve()
         self.output_root = Path(self.output_root).resolve()
+        if self.experiment_profile is not None:
+            self.experiment_profile = Path(self.experiment_profile).resolve()
+            if self.reuse_existing or self.reference_profile is not None:
+                raise ValueError("A from-raw experiment cannot reuse existing prices/features or a reference-run profile")
+        if self.reference_profile is not None:
+            self.reference_profile = Path(self.reference_profile).resolve()
+        if self.reference_mode not in ("refit", "predict"):
+            raise ValueError("reference_mode must be refit or predict")
+        if self.reference_threads is not None and self.reference_threads < 1:
+            raise ValueError("reference_threads must be positive")
         protected = [self.source_root / name for name in ("data_prep", "imputation", "model_input")]
         if self.output_root == self.source_root or any(
             self.output_root == path or path in self.output_root.parents for path in protected

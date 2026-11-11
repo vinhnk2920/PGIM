@@ -2,6 +2,7 @@
 
 
 def run(settings):
+    from functions.experiment import profile, reported, record_panel
     from functions.imputation.artifacts import artifact_paths, run_timestamp, save_artifacts
     from functions.imputation.schema import (
         AMENITY_TYPES,
@@ -169,13 +170,19 @@ def run(settings):
         )
     df_raw["Area_Cleaned"] = clean_num(df_raw["Area (SQFT)"])
     df_raw["Sale_PSF"] = clean_num(df_raw["Unit Price ($ PSF)"])
-    validate_bucket_ranges(pd.read_csv(SIZE_BUCKET_RANGES_CSV))
-    bucket_ranges = export_bucket_ranges()
-    df_raw["size_bucket"] = make_size_bucket(df_raw["Area_Cleaned"], q=N_SIZE_BUCKETS)
+    if reported(settings):
+        from functions.experiment import sales_buckets
+        bucket_ranges = pd.read_csv(SIZE_BUCKET_RANGES_CSV)
+        df_raw["size_bucket"] = sales_buckets(df_raw["Area_Cleaned"], bucket_ranges)
+    else:
+        validate_bucket_ranges(pd.read_csv(SIZE_BUCKET_RANGES_CSV))
+        bucket_ranges = export_bucket_ranges()
+        df_raw["size_bucket"] = make_size_bucket(df_raw["Area_Cleaned"], q=N_SIZE_BUCKETS)
     print(
         f"Validated shared bucket-range reference: {SIZE_BUCKET_RANGES_CSV} ({len(bucket_ranges)} buckets)"
     )
-    print("Shared fixed size buckets: <=650, (650,950], (950,1150], (1150,1450], >1450 sqft")
+    print("Reported sales cuts from fresh rental quantile bounds" if reported(settings) else
+          "Shared fixed size buckets: <=650, (650,950], (950,1150], (1150,1450], >1450 sqft")
     print(
         f"\n{'Bucket':<8} {'Cut lower':>13} {'Cut upper':>13}  {'Observed sales min':>18} {'Observed sales max':>18}  {'N in bucket':>11}"
     )
@@ -220,6 +227,7 @@ def run(settings):
         X_full[p, t, 0] = row["Sale_PSF_mean"]
         M_full[p, t, 0] = 1.0
     dates = pd.PeriodIndex(all_months, freq="M").to_timestamp()
+    record_panel(settings, "sales", X_full, M_full, all_projects, all_months)
     obs_vals = X_full[M_full == 1]
     print(f"Full panel : P={P}, T={T}, B={B}")
     print(f"Date range : {all_months[0]} → {all_months[-1]}")
@@ -298,43 +306,49 @@ def run(settings):
         val_es_pos=val_es_pos,
     )
     print("[sales imputation] source phase 10")
-    a4_grid = {
-        "z_dim": [8, 16, 32],
-        "beta": [0.01, 0.05, 0.1],
-        "lr": [0.001, 0.0003],
-        "h": [64, 128, 256],
-        "drop": [0.05, 0.1, 0.2],
-    }
-    configs = list(
-        iproduct(a4_grid["z_dim"], a4_grid["beta"], a4_grid["lr"], a4_grid["h"], a4_grid["drop"])
-    )
-    if settings.imputation_max_configs is not None:
-        configs = configs[: settings.imputation_max_configs]
-    print(f"Grid config  : {len(configs)} combinations")
-    for k, v in a4_grid.items():
-        print(f"  {k}: {v}")
-    t0_gs = time.time()
-    gs_rows = []
-    best_config = {"val_rmse": np.inf}
-    for z_dim, beta, lr, h, drop in tqdm(configs, desc="VAE-A4 grid"):
-        _, rv, e = val_rmse_a4(
-            z_dim,
-            beta,
-            lr,
-            C_ctx,
-            h=h,
-            drop=drop,
-            context=context,
-            max_epochs=settings.imputation_max_epochs,
+    if reported(settings):
+        best_config = dict(profile(settings)["vae_configs"]["sales"])
+        best_config["val_rmse"] = None
+        print("Fresh VAE training with reported scalar hyperparameters:", best_config)
+        gs_df = pd.DataFrame([best_config])
+    else:
+        a4_grid = {
+            "z_dim": [8, 16, 32],
+            "beta": [0.01, 0.05, 0.1],
+            "lr": [0.001, 0.0003],
+            "h": [64, 128, 256],
+            "drop": [0.05, 0.1, 0.2],
+        }
+        configs = list(
+            iproduct(a4_grid["z_dim"], a4_grid["beta"], a4_grid["lr"], a4_grid["h"], a4_grid["drop"])
         )
-        row = dict(z_dim=z_dim, beta=beta, lr=lr, h=h, drop=drop, epochs=e, val_rmse=rv)
-        gs_rows.append(row)
-        print(f"  z={z_dim} b={beta} lr={lr} h={h} drop={drop} -> epochs={e} val_rmse={rv:.4f}")
-        if rv < best_config["val_rmse"]:
-            best_config = row.copy()
-    print(f"\nDone in {time.time() - t0_gs:.1f}s | Best: {best_config}")
-    gs_df = pd.DataFrame(gs_rows).sort_values("val_rmse").reset_index(drop=True)
-    print(gs_df.head(10).to_string())
+        if settings.imputation_max_configs is not None:
+            configs = configs[: settings.imputation_max_configs]
+        print(f"Grid config  : {len(configs)} combinations")
+        for k, v in a4_grid.items():
+            print(f"  {k}: {v}")
+        t0_gs = time.time()
+        gs_rows = []
+        best_config = {"val_rmse": np.inf}
+        for z_dim, beta, lr, h, drop in tqdm(configs, desc="VAE-A4 grid"):
+            _, rv, e = val_rmse_a4(
+                z_dim,
+                beta,
+                lr,
+                C_ctx,
+                h=h,
+                drop=drop,
+                context=context,
+                max_epochs=settings.imputation_max_epochs,
+            )
+            row = dict(z_dim=z_dim, beta=beta, lr=lr, h=h, drop=drop, epochs=e, val_rmse=rv)
+            gs_rows.append(row)
+            print(f"  z={z_dim} b={beta} lr={lr} h={h} drop={drop} -> epochs={e} val_rmse={rv:.4f}")
+            if rv < best_config["val_rmse"]:
+                best_config = row.copy()
+        print(f"\nDone in {time.time() - t0_gs:.1f}s | Best: {best_config}")
+        gs_df = pd.DataFrame(gs_rows).sort_values("val_rmse").reset_index(drop=True)
+        print(gs_df.head(10).to_string())
     print("[sales imputation] source phase 11")
     t0_eval = time.time()
     print("Stage 6a: training evaluation model on train split ...")
@@ -654,6 +668,15 @@ def run(settings):
         print(f"Macro monthly: {macro_monthly.shape}")
     print(f"\nFinal series_meta: {series_meta.shape[0]} projects × {series_meta.shape[1]} cols")
     print("[sales imputation] source phase 25")
+    pre_start_missing = 0
+    if settings.top_first:
+        from functions.imputation.start_month import apply_top_first
+
+        pre_start_missing = apply_top_first(
+            settings.prep_path("property", "property_details_facilities.csv"),
+            series_meta, all_months, M_full,
+            X_imputed, X_prod_mu2, X_prod_sig2, X_pi_lo, X_pi_hi,
+        )
     rows = []
     for p in range(P):
         for t in range(T):
@@ -739,7 +762,7 @@ def run(settings):
     )
     assert actual_districts == EXPECTED_DISTRICTS
     assert duplicate_panel_keys == 0
-    assert missing_sale_imp == 0
+    assert missing_sale_imp == pre_start_missing
     df_full_out.to_csv(CSV_OUT, index=False)
     print(f"Saved {CSV_OUT}  ({os.path.getsize(CSV_OUT) / 1000000.0:.1f} MB)")
     bundle_out = {

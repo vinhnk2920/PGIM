@@ -83,6 +83,20 @@ def test_horizon_uses_calendar_month_not_next_available_row():
     assert result.loc[result.period.eq(200001), "target_level"].isna().all()
 
 
+@pytest.mark.parametrize("target_mode", ["level", "log_growth"])
+def test_top_first_blank_prices_are_not_forecast_origins(target_mode):
+    source = panel()
+    blank = source.project_idx.eq(0) & source.period.isin([200001, 200003])
+    source.loc[blank, ["rent_psf_imp", "rent_psf_obs"]] = np.nan
+    source.loc[blank, "was_observed"] = False
+    result = horizon_frame(source, 1, target_mode=target_mode)
+    condo = result.loc[result.project_idx.eq(0)].set_index("period")
+    assert 200001 not in condo.index and 200003 not in condo.index
+    assert condo.loc[200002, "was_observed"]
+    assert pd.isna(condo.loc[200002, "target_level"])
+    assert result["base_log"].notna().all()
+
+
 def test_observed_evaluation_and_unknown_future():
     frame = horizon_frame(panel(), 24, observed_only=True)
     assert frame.was_observed.all() and frame.target_observed.all()

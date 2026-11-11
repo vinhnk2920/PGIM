@@ -72,7 +72,10 @@ def test_fixed_five_bucket_policy_rejects_a_different_bucket_count():
 
 
 @pytest.mark.parametrize("market", ["rental", "sales"])
-def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path, monkeypatch, market):
+@pytest.mark.parametrize("top_first", [False, True])
+def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(
+    tmp_path, monkeypatch, market, top_first
+):
     import importlib
     import torch
     from functions.config import Settings
@@ -81,7 +84,8 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
     monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
     torch.set_num_threads(1)
     settings = Settings(source_root=tmp_path / "data", output_root=tmp_path / "out",
-                        imputation_max_configs=1, imputation_max_epochs=1, mc_draws=2)
+                        imputation_max_configs=1, imputation_max_epochs=1, mc_draws=2,
+                        top_first=top_first)
     settings.folder("01_preprocessing")
     settings.folder("02_imputation")
     export_bucket_ranges().to_csv(settings.bucket_ranges(), index=False)
@@ -90,6 +94,15 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
     reference_dates = pd.date_range("2017-12-01", periods=24, freq="MS")
     pd.DataFrame({"month": reference_dates,
                   "cpi_all_items_infl_yoy_pct": reference_dates.month}).to_csv(macro_path, index=False)
+    if top_first:
+        top_path = settings.prep_path("property", "property_details_facilities.csv")
+        top_path.parent.mkdir(parents=True)
+        top_path.write_text(
+            "Project Name,Project Name in Realis,TOP date\n"
+            "Alias for Condo 27,CONDO 27,10-Apr-18\n"
+            "CONDO 26,,1-Jan-18\n",
+            encoding="utf-8",
+        )
     # Tie two observations at 650; cover every exact cut and the open upper bin.
     cases = [(650, "SZ1", 0), (650, "SZ1", 1), (950, "SZ2", 2),
              (1150, "SZ3", 3), (1450, "SZ4", 4), (1451, "SZ5", 5)]
@@ -98,6 +111,10 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
         for date in pd.date_range("2018-01-01", periods=24, freq="MS"):
             for area, bucket, offset in cases:
                 if district == 27 and date.month == 3 and date.year == 2018 and bucket == "SZ5":
+                    continue
+                if top_first and district == 27 and date == pd.Timestamp("2018-05-01") and bucket == "SZ5":
+                    continue
+                if top_first and district == 26 and date == pd.Timestamp("2018-01-01"):
                     continue
                 psf = (3 + offset / 10 + district / 100 + date.month / 1000
                        if market == "rental" else 1000 + offset * 10 + district + date.month)
@@ -126,7 +143,19 @@ def test_market_orchestration_uses_shared_boundaries_in_monthly_targets(tmp_path
     pd.testing.assert_index_equal(observed.sort_index().index, expected.index)
     np.testing.assert_allclose(observed[f"{prefix}_psf_obs"].sort_index(), expected, rtol=1e-6)
     np.testing.assert_array_equal(observed[f"{prefix}_psf_imp"], observed[f"{prefix}_psf_obs"])
-    assert output[f"{prefix}_psf_imp"].notna().all()
+    if top_first:
+        removed = (
+            output["condo_name"].eq("CONDO 27") & output["date"].eq(pd.Timestamp("2018-03-01"))
+            & ~output["was_observed"]
+        ) | (output["condo_name"].eq("CONDO 26") & output["date"].eq(pd.Timestamp("2018-01-01")))
+        assert removed.sum() == 6
+        for suffix in ("imp", "mu", "pi_lo", "pi_hi"):
+            assert output[f"{prefix}_psf_{suffix}"].isna().equals(removed)
+        with np.load(artifact_paths(settings, market)["arrays"], allow_pickle=False) as bundle:
+            for key in ("X_imputed", "X_pi_lo", "X_pi_hi", "X_decoder_mu", "X_decoder_sigma"):
+                assert np.isnan(bundle[key]).sum() == 6
+    else:
+        assert output[f"{prefix}_psf_imp"].notna().all()
     september = output.date.dt.month.eq(9)
     if market == "rental":
         assert output.loc[september, "cpi_all_items_infl_yoy_pct"].eq(8.).all()

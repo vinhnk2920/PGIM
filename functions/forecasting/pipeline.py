@@ -29,7 +29,9 @@ def horizon_frame(panel, horizon, observed_only=False, target_mode="level"):
     if panel.duplicated(["project_idx", "period"]).any():
         raise ValueError("Forecast input has duplicate project/month keys")
     base_col = "rent_psf_obs" if observed_only else "rent_psf_imp"
-    frame = panel.loc[panel["was_observed"]].copy() if observed_only else panel.copy()
+    # TOP-first exports retain calendar rows whose pre-start price is intentionally blank.
+    origin_available = panel["was_observed"] if observed_only else panel[base_col].notna()
+    frame = panel.loc[origin_available].copy()
     target = panel[["project_idx", "period", base_col, "was_observed"]].rename(
         columns={
             "period": "target_period",
@@ -92,6 +94,15 @@ def fit_model(train, features, categoricals, market, arm, horizon, settings):
         weights[:] = 1.0
     if not len(train) or weights.mean() <= 0:
         raise ValueError(f"{market} h={horizon} {arm}: no positive-weight training rows")
+    from functions.experiment import profile
+    experiment = profile(settings)
+    if experiment is not None:
+        params = dict(experiment["forecast"][market][str(horizon)][arm]["params"])
+        params["n_jobs"] = experiment.get("training_threads", params.get("n_jobs", 1))
+        model = LGBMRegressor(**params)
+        print(f"  Fresh {market} h={horizon} {arm} fit using reported scalar parameters", flush=True)
+        model.fit(x, y, sample_weight=weights / weights.mean(), categorical_feature=cats)
+        return params, model, None
     # A named fast mode is useful for smoke runs, without changing quality weights.
     if settings.fast:
         params = lgbm_deterministic_params(DEFAULT_LGBM_PARAMS.copy(), settings.seed)
@@ -158,6 +169,14 @@ def feature_columns(lists, horizon, arm, market, settings):
         else f"FEATURES_T{horizon}" + ("_OBS" if arm == "observed" else "")
     )
     features = list(lists[key])
+    from functions.experiment import profile
+    experiment = profile(settings)
+    if experiment is not None:
+        recorded = experiment["forecast"][market][str(horizon)][arm].get("features")
+        if recorded is not None:
+            if set(recorded) != set(features):
+                raise ValueError(f"Fresh feature schema differs from reported {market} h={horizon} {arm}")
+            features = list(recorded)
     if settings.selected_features:
         name = "sale" if market == "sales" else "rental"
         file = (
@@ -175,6 +194,12 @@ def feature_columns(lists, horizon, arm, market, settings):
 
 
 def run(settings, markets=("rental", "sales"), mode="static"):
+    if settings.reference_profile is not None:
+        if mode != "static":
+            raise ValueError("Reference reproduction supports static forecasts only")
+        from functions.forecasting.reproduce import run_reference
+
+        return run_reference(settings, markets)
     if mode not in ("static", "rolling"):
         raise ValueError("mode must be static or rolling")
     for market in markets:
@@ -182,6 +207,15 @@ def run(settings, markets=("rental", "sales"), mode="static"):
 
         prepare = prepare_rental.prepare if market == "rental" else prepare_sales.prepare
         panel, lists, cats, size_tier = prepare(settings)
+        if settings.experiment_profile is not None:
+            # A fresh diagnostic sample allows an independent feature comparison
+            # without reading historical feature checkpoints during training.
+            sample = panel.head(10_000).copy()
+            sample["size_tier"] = sample["project_idx"].map(size_tier)
+            sample.to_csv(
+                settings.folder("audit") / f"{market}_prepared_first_10000.csv", index=False
+            )
+            del sample
         target_mode = "log_growth" if market == "sales" else "level"
         end = int(panel["period"].max())
         if end < settings.test_cutoff:

@@ -62,6 +62,9 @@ def prepare(settings):
     _SIZE_TIER_BY_PROJECT = _size_tier_pairs.set_index("project_idx")["size_tier"]
     if _SIZE_TIER_BY_PROJECT.isna().any():
         raise ValueError("Missing size_tier in the project mapping")
+    from functions.experiment import reported
+    if reported(settings):
+        from functions.forecasting.legacy_data_loader import fill_missing
     print("[rental forecasting features] phase 5")
     bad_condo_name = df["condo_name"].isna() | df["condo_name"].astype("string").str.strip().isin(
         ["", "Unknown"]

@@ -47,6 +47,9 @@ def prepare(settings):
     SIZE_BUCKET_RANGES_PATH = settings.read_bucket_ranges()
     TARGET_MODE = "log_growth"
     TEST_CUTOFF = settings.test_cutoff
+    from functions.experiment import reported
+    if reported(settings):
+        from functions.forecasting.legacy_data_loader import fill_missing
     print("[sales forecasting features] phase 5")
     if not SIZE_BUCKET_RANGES_PATH.exists():
         raise FileNotFoundError(f"Size bucket range file not found: {SIZE_BUCKET_RANGES_PATH}")

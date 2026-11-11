@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "name": "reported_aug2026",
+  "train_start": 200001,
+  "test_cutoff": 202001,
+  "imputed_target_weight": 1.0,
+  "numeric_dtype": "float32",
+  "error_metrics_rtol": 0.001,
+  "r2_atol": 0.0001,
+  "markets": {
+    "sales": {
+      "reference_run": "../../../rolling_window_models/res_sale_lg_fair_nearby_FullDistricts_FastTuning_20260823_072449",
+      "feature_panel": "Sales_Data_Size_Bucket_Level_With_Imputation.csv",
+      "model_pattern": "sales_lgbm_static_model_h{horizon}.pkl",
+      "reference_predictions": "sales_predictions_lgbm_static.csv"
+    },
+    "rental": {
+      "reference_run": "../../../rolling_window_models/results_rental_static_level_NearbyPrices_FullDistricts_FastTuning_20260820_012621",
+      "feature_panel": "Rental_Data_Size_Bucket_Level_With_Imputation.csv",
+      "model_pattern": "rental_lgbm_static_model_h{horizon}.pkl",
+      "reference_predictions": "rental_predictions_lgbm_static.csv"
+    }
+  },
+  "scope": "Refit the imputed forecasting arms on archived engineered feature panels; preserve archived feature order, categories, parameters, seed, target mode and W1 labels. This does not rerun VAE or updated upstream feature construction. Archived observed-only predictions are used only to identify the original fair scoring rows."
+}

@@ -24,6 +24,9 @@ def assessed_reference(settings, dates):
     )
     if raw.exists():
         return None
+    from functions.experiment import reported
+    if reported(settings):
+        raise FileNotFoundError(f"Fresh raw run requires the original ownership source: {raw}")
     reference = (
         settings.source_root / "imputation" / "URA_renting_imputed_vae_a4_mcra_full_districts.csv"
     )
@@ -144,7 +147,8 @@ def run(settings, markets=("rental", "sales"), rebuild_raw=False):
         df = pd.read_csv(source, low_memory=False)
         print(f"[preprocessing 2/3] {market}: merge quarterly macro features")
         date = "Lease Commencement Date" if market == "rental" else "Sale Date"
-        if market == "rental":
+        from functions.experiment import reported
+        if market == "rental" and not reported(settings):
             df = fill_rental_monthly_macro_gaps(
                 df, date, settings.prep_path("macro", "monthly", "sg_macro_monthly.csv"),
                 copy=False,

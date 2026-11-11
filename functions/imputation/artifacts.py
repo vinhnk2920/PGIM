@@ -4,6 +4,8 @@ from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 import tempfile
+import platform
+import sys
 
 import joblib
 import numpy as np
@@ -69,6 +71,19 @@ def save_artifacts(settings, market, bundle, *, results, coverage, eval_vms, pro
         "note": "Point-error metrics use masked inference from the evaluation model. PI90_actual_pct is conformal interval coverage; MC_PI90_actual_pct is Monte Carlo draw coverage. Production estimates are not used to score held-out test cells.",
         "scaler_policy": "Inherited method: the scaler uses the full observed panel, including held-out values; neural-network training masks validation, calibration and test cells. This export does not change that methodology.",
     }
+    from functions.experiment import profile
+    experiment = profile(settings)
+    if experiment is not None:
+        import torch
+        metrics["fresh_run"] = {
+            "experiment": experiment["name"], "methodology": experiment["methodology"],
+            "parameter_selection": "Reported scalar parameters; no grid search in this run",
+            "weights": "Evaluation and production networks trained from fresh initialization",
+            "python": sys.version, "platform": platform.platform(),
+            "numpy": np.__version__, "torch": torch.__version__,
+            "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
+            "mc_draws": settings.mc_draws,
+        }
     saved_bundle = {**bundle, "schema_version": 4, "producer_version": "vae_a4_cs_mcra_v6",
                     "market": market, "seed": settings.seed, "run_timestamp": started_at,
                     "test_metrics": metrics}
